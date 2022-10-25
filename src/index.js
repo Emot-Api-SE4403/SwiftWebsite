@@ -1,13 +1,36 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import {
+  createBrowserRouter,
+  RouterProvider,
+} from "react-router-dom";
 import './index.css';
-import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+import App from './pages/App';
+import ErrorPage from './pages/ErrorPage';
+import Contact from './pages/Contact'
+
+
+// Menaruh daftar routing disini
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <App />,
+    errorElement: <ErrorPage />
+  },
+  {
+    path: "/contact",
+    element: <Contact />,
+    errorElement: <ErrorPage />
+  }
+]);
+
+// Memanggil object routing disini
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <RouterProvider router={router} />
   </React.StrictMode>
 );
 

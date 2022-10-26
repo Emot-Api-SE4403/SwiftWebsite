@@ -1,4 +1,4 @@
-import logo from './logo.svg';
+import logo from '../logo.svg';
 import './App.css';
 
 function App() {
@@ -17,6 +17,7 @@ function App() {
         >
           Learn React
         </a>
+        <a href="/contact">Open contact</a>
       </header>
     </div>
   );

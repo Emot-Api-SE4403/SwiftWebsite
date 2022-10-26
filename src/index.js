@@ -10,6 +10,7 @@ import reportWebVitals from './reportWebVitals';
 import App from './pages/App';
 import ErrorPage from './pages/ErrorPage';
 import Contact from './pages/Contact'
+import Login from './pages/Login';
 
 
 // Menaruh daftar routing disini
@@ -23,7 +24,12 @@ const router = createBrowserRouter([
     path: "/contact",
     element: <Contact />,
     errorElement: <ErrorPage />
-  }
+  },
+  {
+    path: "/login",
+    element: <Login />,
+    errorElement: <ErrorPage />
+  },
 ]);
 
 // Memanggil object routing disini

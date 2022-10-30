@@ -1,35 +1,59 @@
+import "bootstrap/dist/css/bootstrap.min.css";
+import logo from "../images/logo 512 256.svg";
+
+
 export default function Login() {
+    
     return (
-        <form action="http://localhost:3000/" method="post" className="login">
-            <div className="logocontainer">
-                <img
-                src="./Swift Login Page_files/logo 512 256.svg"
-                alt="Logo Swift e-learning"
-                className="logoImage"
-                />
-            </div>
-            <div className="loginformcontainer">
-                <label htmlFor="emailLogin" className="loginGuide">
-                Email
-                </label>
-                <input type="email" id="emailLogin" name="emailLogin" required="" />
-                <label htmlFor="pwLogin" className="loginGuide">
-                Password
-                </label>
-                <input type="password" id="pwLogin" name="pwLogin" required="" />
-                <a href="http://localhost:3000/lupapassword" className="forgetpw">
-                Lupa password?
-                </a>
-            </div>
-            <div className="loginformcontainer">
-                <button type="submit" className="loginbutton">
-                Log In{" "}
-                </button>
-                <div className="newstudent">
-                <label>siswa baru? </label>
-                <a href="http://localhost:3000/register">Daftar Sekarang!</a>
+        <>
+        <div class="container" style={{maxWidth: "600px"}}>
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <img src={logo} alt="logo swift" class="img-fluid"/>
                 </div>
             </div>
-        </form>
+            <div class="row">
+                <div class="col-md-12">
+                    <form>
+                        <div className="mb-3">
+                            <label htmlFor="exampleInputEmail1" className="form-label">
+                                Email address
+                            </label>
+                            <input
+                                type="email"
+                                className="form-control"
+                                id="exampleInputEmail1"
+                                aria-describedby="emailHelp"
+                            />
+                            <div id="emailHelp" className="form-text">
+                                We'll never share your email with anyone else.
+                            </div>
+                        </div>
+                        <div className="mb-3">
+                            <label htmlFor="exampleInputPassword1" className="form-label">
+                                Password
+                            </label>
+                            <input
+                                type="password"
+                                className="form-control"
+                                id="exampleInputPassword1"
+                            />
+                        </div>
+                        <div className="mb-3 form-check">
+                            <input type="checkbox" className="form-check-input" id="exampleCheck1" />
+                            <label className="form-check-label" htmlFor="exampleCheck1">
+                                Check me out
+                            </label>
+                        </div>
+                        <div class="text-center">
+                            <button type="submit" className="btn btn-primary">
+                                Submit
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        </>
     )
 }

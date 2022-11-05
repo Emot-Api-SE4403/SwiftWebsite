@@ -1,24 +1,47 @@
-import logo from '../logo.svg';
+import logo from '../images/logo.svg';
+import "bootstrap/dist/css/bootstrap.min.css";
 import './App.css';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-        <a href="/contact">Open contact</a>
-      </header>
+    <div class="container-fluid text-center" style={{"background-color": "#282c34", height:"100vh"}}>
+      <div class="row py-2">
+        <div class="col-md-12">
+          <h2 style={{"color":"white"}}>10:00 AM Group Presents</h2>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <img src={logo} class="App-logo img" alt="logo" style={{maxWidth:"30vw", height:"auto"}}/>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <h1 style={{"color":"white"}}>Daftar isi halaman</h1>
+        </div>
+      </div>
+      <div class="row py-3">
+        <div class="col-md-4">
+          <a href="/contact">Open contact</a>
+        </div>
+        <div class="col-md-4">
+          <a href="/login">Open login page</a>
+        </div>
+        <div class="col-md-4">
+          <a href="/404NotFound">Open error page</a>
+        </div>
+      </div>
+      <div class="row py-3">
+        <div class="col-md-4">
+          <a href="/404NotFound">TODO</a>
+        </div>
+        <div class="col-md-4">
+          <a href="/404NotFound">TODO</a>
+        </div>
+        <div class="col-md-4">
+          <a href="/404NotFound">TODO</a>
+        </div>
+      </div>
     </div>
   );
 }

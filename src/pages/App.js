@@ -39,6 +39,17 @@ function App() {
           <a href="/register">Open real register page</a>
         </div>
         <div class="col-md-4">
+          <a href="/riwayat/materi">Halaman riwayat materi</a>
+        </div>
+      </div>
+      <div class="row py-3">
+        <div class="col-md-4">
+          <a href="/riwayat/soal">halaman riwayat soal</a>
+        </div>
+        <div class="col-md-4">
+          <a href="/404">todo</a>
+        </div>
+        <div class="col-md-4">
           <a href="/404NotFound">TODO</a>
         </div>
       </div>

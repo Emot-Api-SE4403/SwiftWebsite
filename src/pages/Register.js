@@ -94,6 +94,7 @@ export default function Register() {
                                 id="nama"
                                 label="Nama"
                                 autoFocus
+                                variant="filled"
                             />
                         </Grid>
                         <Grid item xs={12}>
@@ -104,6 +105,7 @@ export default function Register() {
                                 label="Email Address"
                                 name="email"
                                 autoComplete="email"
+                                variant="filled"
                             />
                         </Grid>
                         <Grid item xs={12}>
@@ -115,6 +117,7 @@ export default function Register() {
                                 type="password"
                                 id="password"
                                 autoComplete="new-password"
+                                variant="filled"
                             />
                         </Grid>
                         <Grid item xs={12}>
@@ -126,6 +129,7 @@ export default function Register() {
                                 type="password"
                                 id="confirmpassword"
                                 autoComplete="new-password"
+                                variant="filled"
                             />
                         </Grid>  
                         <Grid item xs={12} md={6}>

@@ -126,6 +126,7 @@ export default function Register() {
                                 autoComplete="new-password"
                                 variant="filled"
                             />
+                            
                         </Grid>  
                         <Grid item xs={12} md={6}>
                             <Button

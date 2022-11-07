@@ -86,7 +86,7 @@ export default function Login() {
                                 label="Password"
                                 type="password"
                                 id="password"
-                                autoComplete="new-password"
+                                autoComplete="password"
                             />
                             <Grid container justifyContent="flex-end">
                             <Grid item>

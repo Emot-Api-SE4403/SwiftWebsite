@@ -47,8 +47,8 @@ function App() {
           <a href="/riwayat/soal">halaman riwayat soal</a>
         </div>
         <div class="col-md-4">
-          <a href="/404">todo</a>
-        </div>
+          <a href="/tugas">Halaman tugas</a>
+        </div>  
         <div class="col-md-4">
           <a href="/404NotFound">TODO</a>
         </div>

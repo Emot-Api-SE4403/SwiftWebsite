@@ -11,6 +11,8 @@ import App from './pages/App';
 import ErrorPage from './pages/ErrorPage';
 import Contact from './pages/Contact'
 import Login from './pages/Login';
+import SignUp from './pages/RegisterExample';
+import Register from './pages/Register';
 
 
 // Menaruh daftar routing disini
@@ -28,6 +30,16 @@ const router = createBrowserRouter([
   {
     path: "/login",
     element: <Login />,
+    errorElement: <ErrorPage />
+  },
+  {
+    path: "/registertest",
+    element: <SignUp />,
+    errorElement: <ErrorPage />
+  },
+  {
+    path: "/register",
+    element: <Register />,
     errorElement: <ErrorPage />
   },
 ]);

@@ -4,7 +4,7 @@ import './App.css';
 
 function App() {
   return (
-    <div class="container-fluid text-center" style={{"background-color": "#282c34", height:"100vh"}}>
+    <div class="container-fluid text-center" style={{"background-color": "#282c34"}}>
       <div class="row py-2">
         <div class="col-md-12">
           <h2 style={{"color":"white"}}>10:00 AM Group Presents</h2>
@@ -12,7 +12,7 @@ function App() {
       </div>
       <div class="row">
         <div class="col-md-12">
-          <img src={logo} class="App-logo img" alt="logo" style={{maxWidth:"30vw", height:"auto"}}/>
+          <img src={logo} class="App-logo img" alt="logo" style={{maxWidth:"40vw", height:"auto"}}/>
         </div>
       </div>
       <div class="row">
@@ -33,10 +33,10 @@ function App() {
       </div>
       <div class="row py-3">
         <div class="col-md-4">
-          <a href="/404NotFound">TODO</a>
+          <a href="/registertest">Open example register page</a>
         </div>
         <div class="col-md-4">
-          <a href="/404NotFound">TODO</a>
+          <a href="/register">Open real register page</a>
         </div>
         <div class="col-md-4">
           <a href="/404NotFound">TODO</a>

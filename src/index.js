@@ -13,6 +13,8 @@ import Contact from './pages/Contact'
 import Login from './pages/Login';
 import SignUp from './pages/RegisterExample';
 import Register from './pages/Register';
+import RiwayatMateri from './pages/RiwayatMateri';
+import RiwayatSoal from './pages/RiwayatSoal';
 
 
 // Menaruh daftar routing disini
@@ -40,6 +42,16 @@ const router = createBrowserRouter([
   {
     path: "/register",
     element: <Register />,
+    errorElement: <ErrorPage />
+  },
+  {
+    path: "/riwayat/materi",
+    element: <RiwayatMateri />,
+    errorElement: <ErrorPage />
+  },
+  {
+    path: "/riwayat/soal",
+    element: <RiwayatSoal />,
     errorElement: <ErrorPage />
   },
 ]);

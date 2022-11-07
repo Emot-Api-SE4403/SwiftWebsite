@@ -15,6 +15,7 @@ import SignUp from './pages/RegisterExample';
 import Register from './pages/Register';
 import RiwayatMateri from './pages/RiwayatMateri';
 import RiwayatSoal from './pages/RiwayatSoal';
+import Tugas from './pages/Tugas';
 
 
 // Menaruh daftar routing disini
@@ -52,6 +53,11 @@ const router = createBrowserRouter([
   {
     path: "/riwayat/soal",
     element: <RiwayatSoal />,
+    errorElement: <ErrorPage />
+  },
+  {
+    path: "/tugas",
+    element: <Tugas />,
     errorElement: <ErrorPage />
   },
 ]);

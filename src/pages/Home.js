@@ -3,10 +3,33 @@ import * as React from 'react';
 import { ThemeRed } from '../components/Theme';
 import LowerNavbar from '../components/LowerNavbar';
 import TuneIcon from '@mui/icons-material/Tune';
-
+import SearchIcon from '@mui/icons-material/Search';
 import Paper from '@mui/material/Paper';
+import {styled, alpha} from '@mui/material/styles';
+import InputBase from '@mui/material/InputBase';
 
 
+const Search = styled('div')(({ theme }) => ({
+    position: 'relative',
+    borderRadius: theme.shape.borderRadius,
+    backgroundColor: alpha(theme.palette.common.white, 0.15),
+    '&:hover': {
+      backgroundColor: alpha(theme.palette.common.white, 0.25),
+    },
+    marginLeft: 0,
+    marginRight:0,
+    width: '100%',
+    display: 'flex', 
+    flexDirection:'row',
+    alignItems:'center',
+    
+  }));
+  
+  const StyledInputBase = styled(InputBase)(({ theme }) => ({
+    color: 'inherit',
+    padding: theme.spacing(1, 1, 1, 0),
+    width:'100%',
+  }));
 
 export default function Home() {
     const name = "John Doe";
@@ -26,8 +49,16 @@ export default function Home() {
                                     <TuneIcon />
                             </Grid>
                             <Grid item xs={12}>
-                                <Paper sx={{border: '20px'}}>
-                                    <Typography variants='h3' >Something in here</Typography>
+                                <Paper sx={{border: '20px', }}>
+                                <Search>
+                                    <div style={{padding: '0 10px'}}>
+                                        <SearchIcon />
+                                    </div>
+                                    <StyledInputBase
+                                        placeholder="Search…"
+                                        inputProps={{ 'aria-label': 'search' }}
+                                    />
+                                </Search>
                                 </Paper>
                             </Grid>
                         </Grid>

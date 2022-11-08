@@ -5,33 +5,10 @@ import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
-import { ThemeProvider, createTheme } from "@mui/material/styles";
+import { ThemeProvider } from "@mui/material/styles";
 import logo from "../images/logo 512 256.svg";
 import CssBaseline from '@mui/material/CssBaseline';
-
-
-const theme = createTheme({
-    palette: {
-      primary: {
-        main: '#A53B29',
-      },
-      secondary: {
-        main: '#7C554D',
-      },
-      tertiary: {
-        main: '#725C22',
-      },
-      error: {
-        main: '#BA1A1A',
-      },
-      background: {
-        main: '#201A19',
-      },
-      outline: {
-        main: '#A08C89',
-      },
-    },
-  });
+import { ThemeRed } from '../components/Theme';
 
 export default function Register() {
     const handleSubmit = (event) => {
@@ -58,13 +35,15 @@ export default function Register() {
       };
 
     return (
-        <ThemeProvider theme={theme}>
+        <ThemeProvider theme={ThemeRed}>
             <CssBaseline />
-            <Container component="main" maxWidth="xs" direction="column" justifyContent="center"> 
+            <Container component="main" maxWidth="xs"> 
                 <Box sx={{
+                    height: '100vh',
                     display: 'flex',
                     flexDirection: 'column',
                     alignItems: 'center',
+                    justifyContent: 'space-evenly'
                 }}>
                     <img src={logo} alt="logo swift" style={
                         {"max-width": "80%", 
@@ -72,74 +51,74 @@ export default function Register() {
                         "padding": "0", 
                         "margin": "0"}
                     }/>
-                </Box>
-                <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 3 }}>
-                    <Grid container spacing={2} justifyContent="center"> 
-                        <Grid item xs={12}>
-                            <Typography variant="h4" color="text.secondary" align="center" sx={{mb: 3}}>
-                                Register Account
-                            </Typography>
-                        </Grid>
-                        <Grid item xs={12}>
-                            <TextField
-                                autoComplete="given-name"
-                                name="nama"
-                                required
-                                fullWidth
-                                id="nama"
-                                label="Nama"
-                                autoFocus
-                                variant="filled"
-                            />
-                        </Grid>
-                        <Grid item xs={12}>
-                            <TextField
-                                required
-                                fullWidth
-                                id="email"
-                                label="Email Address"
-                                name="email"
-                                autoComplete="email"
-                                variant="filled"
-                            />
-                        </Grid>
-                        <Grid item xs={12}>
-                            <TextField
-                                required
-                                fullWidth
-                                name="password"
-                                label="Password"
-                                type="password"
-                                id="password"
-                                autoComplete="new-password"
-                                variant="filled"
-                            />
-                        </Grid>
-                        <Grid item xs={12}>
-                            <TextField
-                                required
-                                fullWidth
-                                name="confirmpassword"
-                                label="Konfirmasi Password"
-                                type="password"
-                                id="confirmpassword"
-                                autoComplete="new-password"
-                                variant="filled"
-                            />
+                    
+                    <Typography variant="h4" color="text.secondary" align="center">
+                        Register Account
+                    </Typography>
                             
-                        </Grid>  
-                        <Grid item xs={12} md={6}>
-                            <Button
-                                type="submit"
-                                variant="outlined"
-                                xs = {12}
-                                fullWidth
-                                sx={{mb: 3, mt:2, borderRadius: 5}}
-                            >
-                            Daftar
-                            </Button> 
-                        </Grid>                    
-                    </Grid>
+                    <Box component="form" noValidate onSubmit={handleSubmit} if="regform">
+                        <Grid container spacing={2} justifyContent="center"> 
+                            
+                            <Grid item xs={12}>
+                                <TextField
+                                    autoComplete="given-name"
+                                    name="nama"
+                                    required
+                                    fullWidth
+                                    id="nama"
+                                    label="Nama"
+                                    autoFocus
+                                    variant="filled"
+                                />
+                            </Grid>
+                            <Grid item xs={12}>
+                                <TextField
+                                    required
+                                    fullWidth
+                                    id="email"
+                                    label="Email Address"
+                                    name="email"
+                                    autoComplete="email"
+                                    variant="filled"
+                                />
+                            </Grid>
+                            <Grid item xs={12}>
+                                <TextField
+                                    required
+                                    fullWidth
+                                    name="password"
+                                    label="Password"
+                                    type="password"
+                                    id="password"
+                                    autoComplete="new-password"
+                                    variant="filled"
+                                />
+                            </Grid>
+                            <Grid item xs={12}>
+                                <TextField
+                                    required
+                                    fullWidth
+                                    name="confirmpassword"
+                                    label="Konfirmasi Password"
+                                    type="password"
+                                    id="confirmpassword"
+                                    autoComplete="new-password"
+                                    variant="filled"
+                                />
+                                
+                            </Grid>                    
+                        </Grid>
+                    </Box>
+                    <Button
+                        type="submit"
+                        variant="outlined"
+                        xs = {12}
+                        fullWidth
+                        sx={{mb: 3, mt:2, borderRadius: 5}}
+                        form="regform"
+                    >
+                    Daftar  
+                    </Button> 
                 </Box>
             </Container>
         </ThemeProvider>

@@ -15,6 +15,8 @@ import RiwayatMateri from './pages/RiwayatMateri';
 import RiwayatSoal from './pages/RiwayatSoal';
 import Tugas from './pages/Tugas';
 import Home from './pages/Home';
+import HIstoriMateri from './pages/HistoriMateri';
+import HIstoriTugas from './pages/HistoriTugas';
 
 // Menaruh daftar routing disini
 const router = createBrowserRouter([
@@ -41,6 +43,16 @@ const router = createBrowserRouter([
   {
     path: "/riwayat/materi",
     element: <RiwayatMateri />,
+    errorElement: <ErrorPage />
+  },
+  {
+    path: "/histori/materi",
+    element: <HIstoriMateri />,
+    errorElement: <ErrorPage />
+  },
+  {
+    path: "/histori/tugas",
+    element: <HIstoriTugas />,
     errorElement: <ErrorPage />
   },
   {

@@ -9,35 +9,30 @@ import reportWebVitals from './reportWebVitals';
 
 import App from './pages/App';
 import ErrorPage from './pages/ErrorPage';
-import Contact from './pages/Contact'
 import Login from './pages/Login';
-import SignUp from './pages/RegisterExample';
 import Register from './pages/Register';
 import RiwayatMateri from './pages/RiwayatMateri';
 import RiwayatSoal from './pages/RiwayatSoal';
 import Tugas from './pages/Tugas';
-
+import Home from './pages/Home';
+import HIstoriMateri from './pages/HistoriMateri';
+import HIstoriTugas from './pages/HistoriTugas';
 
 // Menaruh daftar routing disini
 const router = createBrowserRouter([
   {
-    path: "/",
+    path: "/index",
     element: <App />,
     errorElement: <ErrorPage />
   },
   {
-    path: "/contact",
-    element: <Contact />,
+    path: "/",
+    element: <Home />,
     errorElement: <ErrorPage />
   },
   {
     path: "/login",
     element: <Login />,
-    errorElement: <ErrorPage />
-  },
-  {
-    path: "/registertest",
-    element: <SignUp />,
     errorElement: <ErrorPage />
   },
   {
@@ -48,6 +43,16 @@ const router = createBrowserRouter([
   {
     path: "/riwayat/materi",
     element: <RiwayatMateri />,
+    errorElement: <ErrorPage />
+  },
+  {
+    path: "/histori/materi",
+    element: <HIstoriMateri />,
+    errorElement: <ErrorPage />
+  },
+  {
+    path: "/histori/tugas",
+    element: <HIstoriTugas />,
     errorElement: <ErrorPage />
   },
   {

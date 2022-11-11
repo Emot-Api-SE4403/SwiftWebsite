@@ -16,6 +16,7 @@ import Register from './pages/Register';
 import RiwayatMateri from './pages/RiwayatMateri';
 import RiwayatSoal from './pages/RiwayatSoal';
 import Tugas from './pages/Tugas';
+import Materi from './pages/Materi';
 
 
 // Menaruh daftar routing disini
@@ -60,6 +61,11 @@ const router = createBrowserRouter([
     element: <Tugas />,
     errorElement: <ErrorPage />
   },
+  {
+  path: "/materi",
+    element: <Materi />,
+    errorElement: <ErrorPage />
+  }
 ]);
 
 // Memanggil object routing disini

@@ -1,4 +1,4 @@
-.jumbo{
+.jt {
     margin:15px 30px 0px 30px;
     border-radius:10px;
     background: 
@@ -9,7 +9,7 @@ linear-gradient(
 url(../images/fisika.jpg);
 background-repeat: repeat;
 background-attachment: fixed;
-height:340px;
+height:300px;
 font-size: 100px;
 color: white;
 }

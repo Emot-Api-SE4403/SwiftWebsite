@@ -1,12 +1,13 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.min.js";
-import './Materi.css';
+import "./Materi.css"
 
 export default function Materi() {
     return (
         <>
+        <div class="container-fluid" style={{ backgroundColor: "rgb(250, 219, 216)" }}>
         <script src =  "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-        <div className="jumbo jumbotron-fluid fw-bold">
+        <div className="jt jumbotron-fluid fw-bold">
             <div
             className=" text-center position-relative top-50 start-50 translate-middle"
             style={{ backgroundColor: "black", marginRight: 1000 }}
@@ -46,6 +47,7 @@ export default function Materi() {
                 "\n            .jumbo{\n                margin:15px 30px 0px 30px;\n                border-radius:10px;\n                background: \n            linear-gradient(\n                rgba(0, 0, 0, 0), \n                rgba(0, 0, 0, 0)\n            ),\n            url({logo}fisika.jpg);\n            background-repeat: repeat;\n            background-attachment: fixed;\n            height:340px;\n            font-size: 100px;\n            color: white;\n            }\n        "
             }}
         />
+        </div>
         </>
 
     )

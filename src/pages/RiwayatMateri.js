@@ -9,54 +9,54 @@ export default function RiwayatMateri() {
           nama: "Trigonometri",
           tipe: "MTK",
           icon: "fa fa-pie-chart",
-          link: "/materi/mapel/selhewan"
+          link: "/materi/matematika/trigonometri/part1"
         },
         {
           nama: "Hewan",
           tipe: "Biologi",
           icon: "fa fa-clock-o",
-          link: "/materi/mapel/selhewan"
+          link: "/materi/biologi/selhewan"
         },
         {
           nama: "Hewan",
           tipe: "Biologi (Forum Diskusi)",
           icon: "fa fa-clock-o",
-          link: "/materi/mapel/selhewan"
+          link: "/materi/biologi/selhewan"
         },{
           nama: "Trigonometri",
           tipe: "MTK",
           icon: "fa fa-pie-chart",
-          link: "/materi/mapel/selhewan"
+          link: "/materi/matematika/trigonometri/part1"
         },
         {
           nama: "Hewan",
           tipe: "Biologi",
           icon: "fa fa-clock-o",
-          link: "/materi/mapel/selhewan"
+          link: "/materi/biologi/selhewan"
         },
         {
           nama: "Hewan",
           tipe: "Biologi (Forum Diskusi)",
           icon: "fa fa-clock-o",
-          link: "/materi/mapel/selhewan"
+          link: "/materi/biologi/selhewan"
         },
         {
           nama: "Trigonometri",
           tipe: "MTK",
           icon: "fa fa-pie-chart",
-          link: "/materi/mapel/selhewan"
+          link: "/materi/matematika/trigonometri/part1"
         },
         {
           nama: "Hewan",
           tipe: "Biologi",
           icon: "fa fa-clock-o",
-          link: "/materi/mapel/selhewan"
+          link: "/materi/biologi/selhewan"
         },
         {
           nama: "Hewan",
           tipe: "Biologi (Forum Diskusi)",
           icon: "fa fa-clock-o",
-          link: "/materi/mapel/selhewan"
+          link: "/materi/biologi/selhewan"
         },
       ];
     return (

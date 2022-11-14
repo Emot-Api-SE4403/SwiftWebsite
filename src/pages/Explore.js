@@ -33,19 +33,19 @@ export default function Explore() {
             nama: "Sel hewan",
             tipe: "Biologi",
             icon: "fa fa-pie-chart",
-            link: "/materi/mapel/selhewan"
+            link: "/materi/biologi/selhewan"
         },
         {
             nama: "Tumbuhan",
             tipe: "Biologi",
             icon: "fa fa-pie-chart",
-            link: "/materi/mapel/tumbuhan"
+            link: "/materi/biologi/tumbuhan"
         },
         {
             nama: "Hewan",
             tipe: "Biologi",
             icon: "fa fa-pie-chart",
-            link: "/materi/mapel/selhewan"
+            link: "/materi/biologi/selhewan"
         },
     ]
     var dataFis = [

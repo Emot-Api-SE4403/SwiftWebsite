@@ -14,7 +14,7 @@ const NavigationBar = () => {
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
             <Nav.Link href="/">Home</Nav.Link>
-            <Nav.Link href="/PTugas">TUGAS</Nav.Link>
+            <Nav.Link href="/PTugas">Tugas</Nav.Link>
             <NavDropdown title="Riwayat" id="basic-nav-dropdown">
               <NavDropdown.Item href="/riwayat/materi">
                 Riwayat Materi
@@ -31,8 +31,8 @@ const NavigationBar = () => {
                 Register
               </NavDropdown.Item>
               <NavDropdown.Divider />
-              <NavDropdown.Item href="/account">
-                Manage Account
+              <NavDropdown.Item href="/profil">
+                Manage Profile
               </NavDropdown.Item>
             </NavDropdown>
           </Nav>

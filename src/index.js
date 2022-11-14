@@ -19,6 +19,7 @@ import Home from './pages/Home';
 import HIstoriMateri from './pages/HistoriMateri';
 import HIstoriTugas from './pages/HistoriTugas';
 import Explore from './pages/Explore';
+import Profile from './pages/Profile';
 
 // Menaruh daftar routing disini
 const router = createBrowserRouter([
@@ -77,6 +78,11 @@ const router = createBrowserRouter([
     element: <PTugas />,
     errorElement: <ErrorPage />
   },
+  {
+    path: "/profil",
+    element: <Profile />,
+    errorElement: <ErrorPage />
+  }
 ]);
 
 // Memanggil object routing disini

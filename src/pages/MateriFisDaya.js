@@ -1,13 +1,15 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.min.js";
-import "./Materi.css"
+import "./Materi.css";
+import Navbar from "../components/NavigationBar";
 
-export default function Materi() {
+export default function MateriFisDaya() {
     return (
         <>
+        <Navbar />
         <div class="container-fluid" style={{ backgroundColor: "rgb(250, 219, 216)" }}>
         <script src =  "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-        <div className="jt jumbotron-fluid fw-bold">
+        <div className="jtFisDaya jumbotron-fluid fw-bold">
             <div
             className=" text-center position-relative top-50 start-50 translate-middle"
             style={{ backgroundColor: "black", marginRight: 1000 }}
@@ -16,9 +18,9 @@ export default function Materi() {
             </div>
         </div>
         <div className="text-center fw-semibold" style={{ fontSize: 70 }}>
-            <p>Hukum Newton Dan Penerapannya</p>
+            <p>Daya</p>
             <br />
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/1scecjMJwq8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/DegQ2EfAvG4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             <br />
         </div>
         <div
@@ -26,7 +28,7 @@ export default function Materi() {
             style={{ margin: "15px 30px 0px 30px" }}
         >
             <div className="d-grid gap-2">
-            <p>Hukum Newton ke-3 beserta contoh penerapannya</p>
+            <p>Daya</p>
             <button className="btn btn-secondary" type="button">
                 Kuis
             </button>

@@ -12,7 +12,8 @@ function Tugas (){
       <div class="container">
         <Navbar bg="danger" expand="lg">
           <Container fluid>
-            <button type="button" class="btn-close" aria-label="Close"></button>
+            <a href="/"><button type="button" class="btn-close" aria-label="Close">
+            </button></a>
             <Navbar.Toggle aria-controls="navbarScroll" />
             <Navbar.Collapse id="navbarScroll">
               <Nav
@@ -49,6 +50,18 @@ function Tugas (){
             B. 20
           </label>
         </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked></input>
+          <label class="form-check-label" for="flexRadioDefault2">
+            C. 10
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked></input>
+          <label class="form-check-label" for="flexRadioDefault2">
+            B. 40
+          </label>
+        </div>
         <p><u>Essay</u></p>
         <form>
           <div class="row mb-3">
@@ -64,7 +77,7 @@ function Tugas (){
             </div>
           </div>
           <div class="col-12">
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <a href="/PTugas" type="submit" class="btn btn-primary">Submit</a>
           </div>
         </form>
       </div>

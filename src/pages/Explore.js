@@ -12,19 +12,19 @@ export default function Explore() {
             nama: "Trigonometri",
             tipe: "MTK",
             icon: "fa fa-pie-chart",
-            link: "/materi/mapel/selhewan"
+            link: "/materi/matematika/trigonometri/part1"
         },
         {
             nama: "Trigonometri 2",
             tipe: "MTK",
             icon: "fa fa-pie-chart",
-            link: "/materi/mapel/selhewan"
+            link: "/materi/matematika/trigonometri/part1"
         },
         {
             nama: "Trigonometri 3",
             tipe: "MTK",
             icon: "fa fa-pie-chart",
-            link: "/materi/mapel/selhewan"
+            link: "/materi/matematika/trigonometri/part1"
         },
     ]
 
@@ -39,7 +39,7 @@ export default function Explore() {
             nama: "Tumbuhan",
             tipe: "Biologi",
             icon: "fa fa-pie-chart",
-            link: "/materi/mapel/selhewan"
+            link: "/materi/mapel/tumbuhan"
         },
         {
             nama: "Hewan",
@@ -53,19 +53,19 @@ export default function Explore() {
             nama: "Daya",
             tipe: "Fisika",
             icon: "fa fa-pie-chart",
-            link: "/materi/mapel/selhewan"
+            link: "/materi/fisika/daya"
         },
         {
             nama: "Hukum Newton",
             tipe: "Fisika",
             icon: "fa fa-pie-chart",
-            link: "/materi/mapel/selhewan"
+            link: "/materi/fisika/newton"
         },
         {
             nama: "Momentum",
             tipe: "Fisika",
             icon: "fa fa-pie-chart",
-            link: "/materi/mapel/selhewan"
+            link: "/materi/fisika/newton"
         },
     ]
 

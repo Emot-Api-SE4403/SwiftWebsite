@@ -61,6 +61,7 @@ export default function RiwayatMateri() {
       
     {DataTab.map(({nama, tipe, icon}) => {
     return(
+      <a href="/materi">
       <div class="tombol">
       <button
         type="button"
@@ -78,6 +79,7 @@ export default function RiwayatMateri() {
         </div>
       </button>
       </div>
+      </a>
     )
   })}
     

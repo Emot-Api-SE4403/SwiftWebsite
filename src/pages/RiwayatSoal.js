@@ -26,6 +26,7 @@ export default function RiwayatSoal() {
 
       {DataTab.map(({nama, tipe, icon}) => {
       return(
+        <a href="/tugas">
         <div class="tombol">
         <button
           type="button"
@@ -43,6 +44,7 @@ export default function RiwayatSoal() {
           </div>
         </button>
         </div>
+        </a>
       )
     })}
       

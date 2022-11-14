@@ -17,6 +17,7 @@ import Tugas from './pages/Tugas';
 import Home from './pages/Home';
 import HIstoriMateri from './pages/HistoriMateri';
 import HIstoriTugas from './pages/HistoriTugas';
+import Explore from './pages/Explore';
 
 // Menaruh daftar routing disini
 const router = createBrowserRouter([
@@ -28,6 +29,11 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <Home />,
+    errorElement: <ErrorPage />
+  },
+  {
+    path: "/explore/:mapel",
+    element: <Explore />,
     errorElement: <ErrorPage />
   },
   {

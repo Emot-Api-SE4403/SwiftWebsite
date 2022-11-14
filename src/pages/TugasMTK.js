@@ -7,7 +7,7 @@ import Navbar from 'react-bootstrap/Navbar';
 //import { Link } from 'react-router-dom'
 //import React from 'react';
 
-function Tugas (){
+function TugasMTK (){
     return (
       <div class="container">
         <Navbar bg="danger" expand="lg">
@@ -21,7 +21,7 @@ function Tugas (){
                 style={{ maxHeight: '100px' }}
                 navbarScroll
               >
-                <h2><i>Tugas Mata Pelajaran</i></h2>
+                <h2><i>Tugas Matematika</i></h2>
               </Nav>
               <Form className="d-flex">
                 <Form.Control
@@ -83,4 +83,4 @@ function Tugas (){
       </div>
       );
 }
-export default Tugas
+export default TugasMTK

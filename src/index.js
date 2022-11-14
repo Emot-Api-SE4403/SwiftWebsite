@@ -13,7 +13,6 @@ import Login from './pages/Login';
 import Register from './pages/Register';
 import RiwayatMateri from './pages/RiwayatMateri';
 import RiwayatSoal from './pages/RiwayatSoal';
-import Tugas from './pages/Tugas';
 import MateriFisNewton from './pages/MateriFisNewton';
 import MateriFisDaya from './pages/MateriFisDaya';
 import MateriBioSH from './pages/MateriBioSH';
@@ -25,6 +24,8 @@ import HIstoriMateri from './pages/HistoriMateri';
 import HIstoriTugas from './pages/HistoriTugas';
 import Explore from './pages/Explore';
 import Profile from './pages/Profile';
+import TugasMTK from './pages/TugasMTK';
+import TugasBio from './pages/TugasBio';
 
 // Menaruh daftar routing disini
 const router = createBrowserRouter([
@@ -74,8 +75,13 @@ const router = createBrowserRouter([
     errorElement: <ErrorPage />
   },
   {
-    path: "/tugas",
-    element: <Tugas />,
+    path: "/tugasmtk",
+    element: <TugasMTK />,
+    errorElement: <ErrorPage />
+  },
+  {
+    path: "/tugasbio",
+    element: <TugasBio />,
     errorElement: <ErrorPage />
   },
   {

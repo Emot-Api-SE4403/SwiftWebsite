@@ -26,7 +26,7 @@ function PTugas (){
   </nav>
   {/* body */}
   
-  <a href="/tugas"><button
+  <a href="/tugasmtk"><button
     type="button"
     className="btn btn-light btn-lg btn-block rounded text-left"
     style={{ width: "100%", textAlign: "Left" , marginTop: "10px"}}
@@ -40,7 +40,7 @@ function PTugas (){
     </div>
   </button></a>
   <br />
-  <button
+  <a href="/tugasbio"><button
     type="button"
     className="btn btn-light btn-lg btn-block rounded text-left"
     style={{ width: "100%", textAlign: "Left", marginTop: "10px" }}
@@ -52,9 +52,9 @@ function PTugas (){
         Biologi
       </p>
     </div>
-  </button>
+  </button></a>
   <br />
-  <button
+  <a href="/tugasbio"><button
     type="button"
     className="btn btn-light btn-lg btn-block rounded text-left"
     style={{ width: "100%", textAlign: "Left", marginTop: "10px" }}
@@ -63,10 +63,10 @@ function PTugas (){
       <i className="fa fa-clock-o" aria-hidden="true" />
       Enzim
       <p className="h6" style={{ marginLeft: 26 }}>
-        Biologi (Forum Diskusi)
+        Biologi
       </p>
     </div>
-  </button>
+  </button></a>
   <br />
   <br />
   <br />

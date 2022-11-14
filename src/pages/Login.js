@@ -17,15 +17,10 @@ export default function Login() {
     const handleSubmit = (event) => {
         event.preventDefault();
         const data = new FormData(event.currentTarget);
-        if(data.get('email') !== "admin@admin.test"){
-            alert("Email/Password Salah!");
-        } else {
-            if(data.get('password') !== "password") {
-                alert("Email/Password Salah!");
-            } else {
-                window.location.href = "/";
-            }
-        }
+        console.log({
+            email: data.get('email'),
+            password: data.get('password'),
+        });
       };
 
 
@@ -70,7 +65,7 @@ export default function Login() {
                                 />
                                 <Grid container justifyContent="flex-end">
                                 <Grid item>
-                                    <Link href="#" variant="body2">
+                                    <Link href="mailto:<kucingmeong@student.telkomuniversity.ac.id?subject=Tolong%20jangan%20spam!" variant="body2">
                                     Lupa password?
                                     </Link>
                                 </Grid>

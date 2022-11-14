@@ -1,7 +1,7 @@
 import { Grid, Box, Container, CssBaseline, ThemeProvider, Typography, Link, IconButton} from '@mui/material';
 import * as React from 'react';
 import { ThemeRed } from '../components/Theme';
-import LowerNavbar from '../components/LowerNavbar';
+import NavigationBar from '../components/NavigationBar';
 import logo from '../images/profile.png';
 import StarIcon from '@mui/icons-material/StarBorderOutlined';
 import CartIcon from '@mui/icons-material/ShoppingCartOutlined';
@@ -21,9 +21,12 @@ export default function Profile() {
 
     return(
         <ThemeProvider theme={ThemeRed}>
+            <NavigationBar />
             <CssBaseline />
-            <Container  component="main" sx={{padding:'0'}}>
-                <Box sx={{flexDirection:'column', backgroundColor:'red', borderRadius: '10px'}}>
+            <br />
+            <br />
+            <Container  component="main" maxWidth="md" sx={{padding:'0'}}>
+                <Box sx={{flexDirection:'column' , backgroundColor:'red', borderRadius: '10px'}}>
                     <Grid container sx={{padding:'25px 10px 10px 10px'}}>
                         <Grid item xs={3}>
                             <img src={logo} style={{maxWidth:"4vw", height:"auto"}}/>
@@ -55,7 +58,7 @@ export default function Profile() {
                     
                     <Grid container sx={{backgroundColor:'lightgrey', borderRadius: 2, padding:'15px 5px', marginTop:'10px'}}>
                         <Grid item xs={11}>
-                            <Link href = "/histori/materi"><Typography variants='p' fontWeight='bold'>Riwayat Materi</Typography></Link>
+                            <Link href = "/riwayat/materi"><Typography variants='p' fontWeight='bold'>Riwayat Materi</Typography></Link>
                         
 
                     
@@ -67,7 +70,7 @@ export default function Profile() {
                     </Grid>
                 </Box>
             </Container>
-            <LowerNavbar />
+            
         </ThemeProvider>
     )
 }

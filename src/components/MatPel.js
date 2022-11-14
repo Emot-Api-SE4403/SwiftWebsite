@@ -6,6 +6,7 @@ import image12 from "../images/image-12.jpg"
 import image13 from "../images/image-13.jpg"
 import image14 from "../images/image-14.jpg"
 import image15 from "../images/image-15.jpg"
+import imagemtk from "../images/matematika.jpg";
 const MatPel = () => {
     return (
       <div>
@@ -89,15 +90,15 @@ const MatPel = () => {
            
             <Col md={4} className="MatPelWrapper" id="MatPel">
               <Card className="MatPelImage">
-                <Image src={image13} alt="SOSIOLOGI" className="images" />
+                <Image src={imagemtk} alt="MATEMATIKA" className="images" />
                 <div className="bg-dark">
                   <div className="p-2 m-1 text-white">
-                    <Card.Title className="text-center">SOSIOLOGI</Card.Title>
+                    <Card.Title className="text-center">MATEMATIKA</Card.Title>
                     <Card.Text className="text-left">
                       deskripsi mata pelajaran
                     </Card.Text>
                     <Col md = {6}>
-                    <a href="/explore/sosiologi">
+                    <a href="/explore/matematika">
                         <Button variant="primary">Mulai</Button>{''}
                       </a>
                     </Col>

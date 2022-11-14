@@ -1,0 +1,79 @@
+.jtFisNewton {
+    margin:15px 30px 0px 30px;
+    border-radius:10px;
+    background: 
+linear-gradient(
+    rgba(0, 0, 0, 0), 
+    rgba(0, 0, 0, 0)
+),
+url(../images/fisika.jpg);
+background-repeat: repeat;
+background-attachment: fixed;
+height:300px;
+font-size: 100px;
+color: white;
+}
+
+.jtBioSelHewan {
+    margin:15px 30px 0px 30px;
+    border-radius:10px;
+    background: 
+linear-gradient(
+    rgba(0, 0, 0, 0), 
+    rgba(0, 0, 0, 0)
+),
+url(../images/bio.png);
+background-repeat: repeat;
+background-attachment: fixed;
+height:300px;
+font-size: 100px;
+color: white;
+}
+
+.jtBioTumbuhan {
+    margin:15px 30px 0px 30px;
+    border-radius:10px;
+    background: 
+linear-gradient(
+    rgba(0, 0, 0, 0), 
+    rgba(0, 0, 0, 0)
+),
+url(../images/bioTumbuhan.jpg);
+background-repeat: repeat;
+background-attachment: fixed;
+height:300px;
+font-size: 100px;
+color: white;
+}
+
+.jtFisDaya {
+    margin:15px 30px 0px 30px;
+    border-radius:10px;
+    background: 
+linear-gradient(
+    rgba(0, 0, 0, 0), 
+    rgba(0, 0, 0, 0)
+),
+url(../images/fisDaya.jpg);
+background-repeat: repeat;
+background-attachment: fixed;
+height:300px;
+font-size: 100px;
+color: white;
+}
+
+.jtMatTrigonometri1 {
+    margin:15px 30px 0px 30px;
+    border-radius:10px;
+    background: 
+linear-gradient(
+    rgba(0, 0, 0, 0), 
+    rgba(0, 0, 0, 0)
+),
+url(../images/trigonometri.jpg);
+background-repeat: repeat;
+background-attachment: fixed;
+height:300px;
+font-size: 100px;
+color: white;
+}

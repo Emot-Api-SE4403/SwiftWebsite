@@ -14,6 +14,11 @@ import Register from './pages/Register';
 import RiwayatMateri from './pages/RiwayatMateri';
 import RiwayatSoal from './pages/RiwayatSoal';
 import Tugas from './pages/Tugas';
+import MateriFisNewton from './pages/MateriFisNewton';
+import MateriFisDaya from './pages/MateriFisDaya';
+import MateriBioSH from './pages/MateriBioSH';
+import MateriBioTumbuhan from './pages/MateriBioTumbuhan';
+import MateriMatTrigonometri1 from './pages/MateriMatTrigonometri1';
 import PTugas from './pages/PTugas';
 import Home from './pages/Home';
 import HIstoriMateri from './pages/HistoriMateri';
@@ -74,9 +79,34 @@ const router = createBrowserRouter([
     errorElement: <ErrorPage />
   },
   {
-    path: "/Ptugas",
-    element: <PTugas />,
+  path: "/materi/fisika/newton",
+    element: <MateriFisNewton />,
     errorElement: <ErrorPage />
+  },
+  {
+    path: "/materi/fisika/daya",
+      element: <MateriFisDaya />,
+      errorElement: <ErrorPage />
+  },
+  {
+    path: "/materi/biologi/selHewan",
+      element: <MateriBioSH />,
+      errorElement: <ErrorPage />
+  },
+  {
+  path: "/materi/biologi/tumbuhan",
+  element: <MateriBioTumbuhan />,
+  errorElement: <ErrorPage />
+  },
+  {
+  path: "/materi/matematika/trigonometri/part1",
+  element: <MateriMatTrigonometri1 />,
+  errorElement: <ErrorPage />
+  },
+  {
+  path: "/Ptugas",
+  element: <PTugas />,
+  errorElement: <ErrorPage />
   },
   {
     path: "/profil",

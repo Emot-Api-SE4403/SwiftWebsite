@@ -11,17 +11,20 @@ export default function Explore() {
         {
             nama: "Trigonometri",
             tipe: "MTK",
-            icon: "fa fa-pie-chart"
+            icon: "fa fa-pie-chart",
+            link: "/materi/mapel/selhewan"
         },
         {
             nama: "Trigonometri 2",
             tipe: "MTK",
-            icon: "fa fa-pie-chart"
+            icon: "fa fa-pie-chart",
+            link: "/materi/mapel/selhewan"
         },
         {
             nama: "Trigonometri 3",
             tipe: "MTK",
-            icon: "fa fa-pie-chart"
+            icon: "fa fa-pie-chart",
+            link: "/materi/mapel/selhewan"
         },
     ]
 
@@ -29,34 +32,40 @@ export default function Explore() {
         {
             nama: "Sel hewan",
             tipe: "Biologi",
-            icon: "fa fa-pie-chart"
+            icon: "fa fa-pie-chart",
+            link: "/materi/mapel/selhewan"
         },
         {
             nama: "Tumbuhan",
             tipe: "Biologi",
-            icon: "fa fa-pie-chart"
+            icon: "fa fa-pie-chart",
+            link: "/materi/mapel/selhewan"
         },
         {
             nama: "Hewan",
             tipe: "Biologi",
-            icon: "fa fa-pie-chart"
+            icon: "fa fa-pie-chart",
+            link: "/materi/mapel/selhewan"
         },
     ]
     var dataFis = [
         {
             nama: "Daya",
             tipe: "Fisika",
-            icon: "fa fa-pie-chart"
+            icon: "fa fa-pie-chart",
+            link: "/materi/mapel/selhewan"
         },
         {
             nama: "Hukum Newton",
             tipe: "Fisika",
-            icon: "fa fa-pie-chart"
+            icon: "fa fa-pie-chart",
+            link: "/materi/mapel/selhewan"
         },
         {
             nama: "Momentum",
             tipe: "Fisika",
-            icon: "fa fa-pie-chart"
+            icon: "fa fa-pie-chart",
+            link: "/materi/mapel/selhewan"
         },
     ]
 
@@ -72,13 +81,14 @@ export default function Explore() {
             listData = [{
                 nama:"",
                 tipe:"",
-                icon:""
+                icon:"",
+                link:"#404"
             }]
         }
         return(
-            listData.map(({nama, tipe, icon}) => {
+            listData.map(({nama, tipe, icon, link}) => {
                 return(
-                    <a href="/materi">
+                    <a href={link}>
                   <div class="tombol">
                   <button
                     type="button"
@@ -104,6 +114,10 @@ export default function Explore() {
 
     return(
         <div class="container-fluid" style={{minHeight:"100vh", backgroundColor: "#fbeeeb"}}>
+            <link
+                rel="stylesheet"
+                href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+            />
             <NavigationBar />
             <div class="row">
                 <div class="col-md-12">

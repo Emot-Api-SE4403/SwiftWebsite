@@ -24,6 +24,7 @@ import Home from './pages/Home';
 import HIstoriMateri from './pages/HistoriMateri';
 import HIstoriTugas from './pages/HistoriTugas';
 import Explore from './pages/Explore';
+import Profile from './pages/Profile';
 
 // Menaruh daftar routing disini
 const router = createBrowserRouter([
@@ -86,7 +87,7 @@ const router = createBrowserRouter([
     path: "/materi/fisika/daya",
       element: <MateriFisDaya />,
       errorElement: <ErrorPage />
-    },
+  },
   {
     path: "/materi/biologi/selHewan",
       element: <MateriBioSH />,
@@ -96,15 +97,20 @@ const router = createBrowserRouter([
   path: "/materi/biologi/tumbuhan",
   element: <MateriBioTumbuhan />,
   errorElement: <ErrorPage />
-},
-{
+  },
+  {
   path: "/materi/matematika/trigonometri/part1",
   element: <MateriMatTrigonometri1 />,
   errorElement: <ErrorPage />
-},
+  },
   {
   path: "/Ptugas",
-    element: <PTugas />,
+  element: <PTugas />,
+  errorElement: <ErrorPage />
+  },
+  {
+    path: "/profil",
+    element: <Profile />,
     errorElement: <ErrorPage />
   }
 ]);

@@ -19,7 +19,7 @@ export default function Register() {
         }else if(false){
 
         }else if(data.get('password').length < 8){
-            alert('密码长度不能小于8位');
+            alert('Panjang pasword harus lebih dari 8!');
         } else if(data.get('email') === "admin@admin.test"){
             alert("Email sudah pernah digunakan!");
         } else if(data.get('password') === data.get('confirmpassword')){

@@ -24,7 +24,9 @@ const MatPel = () => {
                       deskripsi mata pelajaran
                     </Card.Text>
                     <Col md = {6}>
+                      <a href="/explore/biologi">
                         <Button variant="primary">Mulai</Button>{''}
+                      </a>
                     </Col>
                     <Col >
                         <Card.Text className="text-left">
@@ -46,7 +48,9 @@ const MatPel = () => {
                       deskripsi mata pelajaran
                     </Card.Text>
                     <Col md = {6}>
+                    <a href="/explore/kimia">
                         <Button variant="primary">Mulai</Button>{''}
+                      </a>
                     </Col>
                     <Col>
                         <Card.Text className="text-left">
@@ -68,7 +72,9 @@ const MatPel = () => {
                       deskripsi mata pelajaran
                     </Card.Text>
                     <Col md = {6}>
+                    <a href="/explore/fisika">
                         <Button variant="primary">Mulai</Button>{''}
+                      </a>
                     </Col>  
                     <Col>
                         <Card.Text className="text-left">
@@ -91,7 +97,9 @@ const MatPel = () => {
                       deskripsi mata pelajaran
                     </Card.Text>
                     <Col md = {6}>
+                    <a href="/explore/sosiologi">
                         <Button variant="primary">Mulai</Button>{''}
+                      </a>
                     </Col>
                     <Col>
                         <Card.Text className="text-left">
@@ -112,7 +120,9 @@ const MatPel = () => {
                       deskripsi mata pelajaran
                     </Card.Text>
                     <Col md = {6}>
+                    <a href="/explore/sejarah">
                         <Button variant="primary">Mulai</Button>{''}
+                      </a>
                     </Col>
                     <Col>
                         <Card.Text className="text-left">
@@ -133,7 +143,9 @@ const MatPel = () => {
                       deskripsi mata pelajaran
                     </Card.Text>
                     <Col md = {6}>
+                    <a href="/explore/geografi">
                         <Button variant="primary">Mulai</Button>{''}
+                      </a>
                     </Col>
                     <Col>
                         <Card.Text className="text-left">
@@ -154,7 +166,9 @@ const MatPel = () => {
                       deskripsi mata pelajaran
                     </Card.Text>
                     <Col md = {6}>
+                    <a href="/explore/kimia">
                         <Button variant="primary">Mulai</Button>{''}
+                      </a>
                     </Col>
                     <Col>
                         <Card.Text className="text-left">
@@ -176,7 +190,9 @@ const MatPel = () => {
                       deskripsi mata pelajaran
                     </Card.Text>
                     <Col md = {6}>
+                    <a href="/explore/fisika">
                         <Button variant="primary">Mulai</Button>{''}
+                      </a>
                     </Col>  
                     <Col>
                         <Card.Text className="text-left">
@@ -199,7 +215,9 @@ const MatPel = () => {
                       deskripsi mata pelajaran
                     </Card.Text>
                     <Col md = {6}>
+                    <a href="/explore/sosiologi">
                         <Button variant="primary">Mulai</Button>{''}
+                      </a>
                     </Col>
                     <Col>
                         <Card.Text className="text-left">

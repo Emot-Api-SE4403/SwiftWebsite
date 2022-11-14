@@ -14,6 +14,7 @@ import Register from './pages/Register';
 import RiwayatMateri from './pages/RiwayatMateri';
 import RiwayatSoal from './pages/RiwayatSoal';
 import Tugas from './pages/Tugas';
+import PTugas from './pages/PTugas';
 import Home from './pages/Home';
 import HIstoriMateri from './pages/HistoriMateri';
 import HIstoriTugas from './pages/HistoriTugas';
@@ -63,6 +64,11 @@ const router = createBrowserRouter([
   {
     path: "/tugas",
     element: <Tugas />,
+    errorElement: <ErrorPage />
+  },
+  {
+    path: "/Ptugas",
+    element: <PTugas />,
     errorElement: <ErrorPage />
   },
 ]);

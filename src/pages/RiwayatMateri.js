@@ -8,47 +8,55 @@ export default function RiwayatMateri() {
         {
           nama: "Trigonometri",
           tipe: "MTK",
-          icon: "fa fa-pie-chart"
+          icon: "fa fa-pie-chart",
+          link: "/materi/mapel/selhewan"
         },
         {
           nama: "Hewan",
           tipe: "Biologi",
-          icon: "fa fa-clock-o"
+          icon: "fa fa-clock-o",
+          link: "/materi/mapel/selhewan"
         },
         {
           nama: "Hewan",
           tipe: "Biologi (Forum Diskusi)",
-          icon: "fa fa-clock-o"
+          icon: "fa fa-clock-o",
+          link: "/materi/mapel/selhewan"
+        },{
+          nama: "Trigonometri",
+          tipe: "MTK",
+          icon: "fa fa-pie-chart",
+          link: "/materi/mapel/selhewan"
+        },
+        {
+          nama: "Hewan",
+          tipe: "Biologi",
+          icon: "fa fa-clock-o",
+          link: "/materi/mapel/selhewan"
+        },
+        {
+          nama: "Hewan",
+          tipe: "Biologi (Forum Diskusi)",
+          icon: "fa fa-clock-o",
+          link: "/materi/mapel/selhewan"
         },
         {
           nama: "Trigonometri",
           tipe: "MTK",
-          icon: "fa fa-pie-chart"
+          icon: "fa fa-pie-chart",
+          link: "/materi/mapel/selhewan"
         },
         {
           nama: "Hewan",
           tipe: "Biologi",
-          icon: "fa fa-clock-o"
+          icon: "fa fa-clock-o",
+          link: "/materi/mapel/selhewan"
         },
         {
           nama: "Hewan",
           tipe: "Biologi (Forum Diskusi)",
-          icon: "fa fa-clock-o"
-        },
-        {
-          nama: "Trigonometri",
-          tipe: "MTK",
-          icon: "fa fa-pie-chart"
-        },
-        {
-          nama: "Hewan",
-          tipe: "Biologi",
-          icon: "fa fa-clock-o"
-        },
-        {
-          nama: "Hewan",
-          tipe: "Biologi (Forum Diskusi)",
-          icon: "fa fa-clock-o"
+          icon: "fa fa-clock-o",
+          link: "/materi/mapel/selhewan"
         },
       ];
     return (
@@ -59,9 +67,9 @@ export default function RiwayatMateri() {
       />
     <NavigationBar />
       
-    {DataTab.map(({nama, tipe, icon}) => {
+    {DataTab.map(({nama, tipe, icon, link}) => {
     return(
-      <a href="/materi">
+      <a href={link}>
       <div class="tombol">
       <button
         type="button"

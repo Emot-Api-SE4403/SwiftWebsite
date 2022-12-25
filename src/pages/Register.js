@@ -9,30 +9,54 @@ import { ThemeProvider } from "@mui/material/styles";
 import logo from "../images/logo 512 256.svg";
 import CssBaseline from '@mui/material/CssBaseline';
 import { ThemeRed } from '../components/Theme';
+import { useNavigate } from "react-router-dom";
+
 
 export default function Register() {
+    const navigate = useNavigate();
+
+    const registerapicall = (data) => {
+      fetch(process.env.REACT_APP_BACKEND_URi+'/auth/register', {
+        method: 'POST',
+        body: JSON.stringify(data),
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      }).then(response => {
+        if (response.ok) {
+          return response.json();
+        }
+        throw new Error(response.statusText);
+      }).then(json => {
+        alert('Registration successful! Please login to continue.');
+        navigate('/login');
+      }).catch(error => {
+        alert(error.message);
+      });
+    };
+    
+  
+
     const handleSubmit = (event) => {
         event.preventDefault();
-        const data = new FormData(event.currentTarget);
-        if(false){
-
-        }else if(false){
-
-        }else if(data.get('password').length < 8){
-            alert('Panjang pasword harus lebih dari 8!');
-        } else if(data.get('email') === "admin@admin.test"){
-            alert("Email sudah pernah digunakan!");
-        } else if(data.get('password') === data.get('confirmpassword')){
-            console.log({
-                nama: data.get('nama'),
-                email: data.get('email'),
-                password: data.get('password'),
-                confirm: data.get('confirmpassword'),
-            });
+        const formData = new FormData(event.target);
+        let data = Object.fromEntries(formData);
+        
+        if (data.password.length < 8) {
+          alert('Panjang pasword harus lebih dari 8!');
+        } else if (data.email === 'admin@admin.test') {
+          alert('Email sudah pernah digunakan!');
+        } else if (data.password === data.confirmpassword) {
+          registerapicall({
+            fullName: data.nama,
+            email: data.email,
+            password: data.password,
+          });
         } else {
-            alert("Confirmasi password tidak sesuai");
+          alert('Confirmasi password tidak sesuai');
         }
       };
+      
 
     return (
         <ThemeProvider theme={ThemeRed}>
@@ -46,7 +70,7 @@ export default function Register() {
                     justifyContent: 'space-evenly'
                 }}>
                     <img src={logo} alt="logo swift" style={
-                        {"max-width": "80%", 
+                        {"maxWidth": "80%", 
                         "height": "auto", 
                         "padding": "0", 
                         "margin": "0"}
@@ -56,7 +80,7 @@ export default function Register() {
                         Register Account
                     </Typography>
                             
-                    <Box component="form" noValidate onSubmit={handleSubmit} if="regform">
+                    <Box component="form" noValidate onSubmit={handleSubmit} id="regform">
                         <Grid container spacing={2} justifyContent="center"> 
                             
                             <Grid item xs={12}>

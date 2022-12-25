@@ -5,20 +5,18 @@ import NavigationBar from '../components/NavigationBar';
 import logo from '../images/profile.png';
 import StarIcon from '@mui/icons-material/StarBorderOutlined';
 import CartIcon from '@mui/icons-material/ShoppingCartOutlined';
+import { useEffect, useState } from 'react';
 import BagIcon from '@mui/icons-material/ShoppingBagOutlined';
 import SettingIcon from '@mui/icons-material/SettingsOutlined';
 
 
 export default function Profile() {
     
-    var name = "Bejo Jaya"
+    var name = "Subarjo Ahmad"
     var jurusan = "SAINTEK"
     var sekolah = "SMAN 1 Bekasi"
-    var email = "bejo12@gmail.com"
+    var email = 'email@mail.com'
     var phone = "081234567890" 
-
-
-
     return(
         <ThemeProvider theme={ThemeRed}>
             <NavigationBar />

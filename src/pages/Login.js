@@ -13,15 +13,39 @@ import { ThemeRed } from '../components/Theme';
 
 
 
+
 export default function Login() {
+
     const handleSubmit = (event) => {
         event.preventDefault();
-        const data = new FormData(event.currentTarget);
-        console.log({
-            email: data.get('email'),
-            password: data.get('password'),
+    
+        const formData = new FormData(event.target);
+        let data = Object.fromEntries(formData);
+        //console.log(data)
+        fetch(process.env.REACT_APP_BACKEND_URi+'/auth/login', {
+            method: 'POST',
+            body: JSON.stringify(data),
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        }).then(response => {
+            if (response.ok) {
+                return response.json();
+            }
+            throw new Error(response.statusText);
+        }).then(json => {
+            //console.log(json);
+            // Save the user data and JWT token in session storage
+            sessionStorage.setItem('user', JSON.stringify(json.user));
+            sessionStorage.setItem('jwt', json.accessToken);
+        
+            // Redirect to the dashboard page
+            window.location.replace('/profil');
+        }).catch(error => {
+            alert(error.message);
         });
-      };
+    };
+      
 
 
     return (
@@ -38,7 +62,7 @@ export default function Login() {
                 }}>
                     <img src={logo} alt="logo swift" 
                     style={{
-                        "max-width": "80%", 
+                        "maxWidth": "80%", 
                         "height": "auto", 
                     }}/>
                     <Box component="form" noValidate onSubmit={handleSubmit} id="loginform">

@@ -27,6 +27,7 @@ import Explore from './pages/Explore';
 import Profile from './pages/Profile';
 import TugasMTK from './pages/TugasMTK';
 import TugasBio from './pages/TugasBio';
+import ProfileEdit from './pages/CompleteRegistration';
 
 // Menaruh daftar routing disini
 const router = createBrowserRouter([
@@ -118,6 +119,11 @@ const router = createBrowserRouter([
   {
     path: "/profil",
     element: <PrivateRoute><Profile /></PrivateRoute>,
+    errorElement: <ErrorPage />
+  },
+  {
+    path: "/profil/edit",
+    element: <PrivateRoute><ProfileEdit /></PrivateRoute>,
     errorElement: <ErrorPage />
   },
   {

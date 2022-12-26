@@ -117,7 +117,7 @@ const router = createBrowserRouter([
   },
   {
     path: "/profil",
-    element: <Profile />,
+    element: <PrivateRoute><Profile /></PrivateRoute>,
     errorElement: <ErrorPage />
   },
   {

@@ -44,8 +44,6 @@ export default function Register() {
         
         if (data.password.length < 8) {
           alert('Panjang pasword harus lebih dari 8!');
-        } else if (data.email === 'admin@admin.test') {
-          alert('Email sudah pernah digunakan!');
         } else if (data.password === data.confirmpassword) {
           registerapicall({
             fullName: data.nama,

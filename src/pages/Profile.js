@@ -11,12 +11,14 @@ import SettingIcon from '@mui/icons-material/SettingsOutlined';
 
 
 export default function Profile() {
-    
-    var name = "Subarjo Ahmad"
+    const userData = JSON.parse(sessionStorage.getItem('user'));
+
+    var name = userData.fullName
     var jurusan = "SAINTEK"
     var sekolah = "SMAN 1 Bekasi"
-    var email = 'email@mail.com'
+    var email = userData.email
     var phone = "081234567890" 
+    
     return(
         <ThemeProvider theme={ThemeRed}>
             <NavigationBar />

@@ -6,6 +6,7 @@ import {
 } from "react-router-dom";
 import './index.css';
 import reportWebVitals from './reportWebVitals';
+import { PrivateRoute } from './components/authorization';
 
 import App from './pages/App';
 import ErrorPage from './pages/ErrorPage';
@@ -117,6 +118,11 @@ const router = createBrowserRouter([
   {
     path: "/profil",
     element: <Profile />,
+    errorElement: <ErrorPage />
+  },
+  {
+    path: '/testredirect',
+    element: <PrivateRoute><h1>Hello</h1></PrivateRoute>,
     errorElement: <ErrorPage />
   }
 ]);

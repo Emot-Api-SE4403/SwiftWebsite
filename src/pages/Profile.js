@@ -11,12 +11,15 @@ import SettingIcon from '@mui/icons-material/SettingsOutlined';
 
 
 export default function Profile() {
-    
-    var name = "Subarjo Ahmad"
+    const userData = JSON.parse(sessionStorage.getItem('user'));
+
+    var name = userData.fullName
     var jurusan = "SAINTEK"
     var sekolah = "SMAN 1 Bekasi"
-    var email = 'email@mail.com'
+    var email = userData.email
     var phone = "081234567890" 
+    var profile = logo
+
     return(
         <ThemeProvider theme={ThemeRed}>
             <NavigationBar />
@@ -27,7 +30,7 @@ export default function Profile() {
                 <Box sx={{flexDirection:'column' , backgroundColor:'red', borderRadius: '10px'}}>
                     <Grid container sx={{padding:'25px 10px 10px 10px'}}>
                         <Grid item xs={3}>
-                            <img src={logo} style={{maxWidth:"4vw", height:"auto"}}/>
+                            <img src={profile} style={{maxWidth:"4vw", height:"auto"}}/>
                         </Grid>
                         <Grid item xs={8}>
                             <Typography variants='p' fontWeight='bold'>{name}</Typography>
@@ -35,7 +38,7 @@ export default function Profile() {
                             <Typography variants='p'>{sekolah}</Typography>
                         </Grid>
                         <Grid item xs={1}>
-                            <IconButton  href="/">
+                            <IconButton  href="/profil/edit">
                                 <SettingIcon />
                             </IconButton>
                         </Grid>

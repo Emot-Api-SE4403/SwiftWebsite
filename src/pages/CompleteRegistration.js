@@ -1,82 +1,42 @@
 import * as React from 'react';
+import MenuItem from '@mui/material/MenuItem';
 import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
 import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
-import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { ThemeProvider } from "@mui/material/styles";
-import logo from "../images/logo 512 256.svg";
 import CssBaseline from '@mui/material/CssBaseline';
 import { ThemeRed } from '../components/Theme';
 import { useNavigate } from "react-router-dom";
+import NavigationBar from "../components/NavigationBar"
+import InputLabel from '@mui/material/InputLabel';
 
 
-export default function Register() {
+export default function ProfileEdit() {
     const navigate = useNavigate();
-
-    const registerapicall = (data) => {
-      fetch(process.env.REACT_APP_BACKEND_URi+'/auth/register', {
-        method: 'POST',
-        body: JSON.stringify(data),
-        headers: {
-          'Content-Type': 'application/json'
-        }
-      }).then(response => {
-        if (response.ok) {
-          return response.json();
-        }
-        throw new Error(response.statusText);
-      }).then(json => {
-        alert('Registration successful! Please login to continue.');
-        navigate('/login');
-      }).catch(error => {
-        alert(error.message);
-      });
-    };
-    
-  
+    const [jurusan, setJurusan] = React.useState('');
+    const userData = JSON.parse(sessionStorage.getItem('user'));
 
     const handleSubmit = (event) => {
-        event.preventDefault();
-        const formData = new FormData(event.target);
-        let data = Object.fromEntries(formData);
-        
-        if (data.password.length < 8) {
-          alert('Panjang pasword harus lebih dari 8!');
-        } else if (data.password === data.confirmpassword) {
-          registerapicall({
-            fullName: data.nama,
-            email: data.email,
-            password: data.password,
-          });
-        } else {
-          alert('Confirmasi password tidak sesuai');
-        }
-      };
+
+    }
       
 
     return (
         <ThemeProvider theme={ThemeRed}>
             <CssBaseline />
+            <NavigationBar />
             <Container component="main" maxWidth="xs"> 
-                <Box sx={{
-                    height: '100vh',
+                
+                <Box fullHeight sx={{
                     display: 'flex',
                     flexDirection: 'column',
                     alignItems: 'center',
-                    justifyContent: 'space-evenly'
+                    justifyContent: 'space-evenly',
+                    height: '90vh'
                 }}>
-                    <img src={logo} alt="logo swift" style={
-                        {"maxWidth": "80%", 
-                        "height": "auto", 
-                        "padding": "0", 
-                        "margin": "0"}
-                    }/>
                     
-                    <Typography variant="h4" color="text.secondary" align="center">
-                        Register Account
-                    </Typography>
                             
                     <Box component="form" noValidate onSubmit={handleSubmit} id="regform">
                         <Grid container spacing={2} justifyContent="center"> 
@@ -90,7 +50,7 @@ export default function Register() {
                                     id="nama"
                                     label="Nama"
                                     autoFocus
-                                    variant="filled"
+                                    value={userData.fullName}
                                 />
                             </Grid>
                             <Grid item xs={12}>
@@ -98,48 +58,57 @@ export default function Register() {
                                     required
                                     fullWidth
                                     id="email"
-                                    label="Email Address"
+                                    label="Email"
                                     name="email"
                                     autoComplete="email"
-                                    variant="filled"
+                                    value={userData.email}
                                 />
                             </Grid>
                             <Grid item xs={12}>
                                 <TextField
                                     required
                                     fullWidth
-                                    name="password"
-                                    label="Password"
-                                    type="password"
-                                    id="password"
-                                    autoComplete="new-password"
-                                    variant="filled"
+                                    id="phoneNumber"
+                                    label="Nomer HP"
+                                    name="phoneNumber"
+                                    autoComplete="tel"
+                                    value={userData.phoneNumber || ""}
                                 />
+                            </Grid>
+                            <Grid item xs={12}>
+                            <TextField
+                                value={jurusan || userData.jurusan}
+                                fullWidth
+                                onChange={(e) => setJurusan(e.target.value)}
+                                select // tell TextField to render select
+                                label="Jurusan"
+                                >
+                                    <MenuItem value="IPA">IPA</MenuItem>
+                                    <MenuItem value="IPS">IPS</MenuItem>
+                                    <MenuItem value="BAHASA">BAHASA</MenuItem>
+                                </TextField>
                             </Grid>
                             <Grid item xs={12}>
                                 <TextField
                                     required
                                     fullWidth
-                                    name="confirmpassword"
-                                    label="Konfirmasi Password"
-                                    type="password"
-                                    id="confirmpassword"
-                                    autoComplete="new-password"
-                                    variant="filled"
+                                    id="asalSekolah"
+                                    label="Sekolah Asal"
+                                    name="asalSekolah"
+                                    value={userData.asalSekolah || ""}
                                 />
-                                
-                            </Grid>                    
+                            </Grid>                 
                         </Grid>
                     </Box>
                     <Button
                         type="submit"
-                        variant="outlined"
+                        variant="filled"
                         xs = {12}
                         fullWidth
                         sx={{mb: 3, mt:2, borderRadius: 5}}
                         form="regform"
                     >
-                    Daftar  
+                    Perbaharui  
                     </Button> 
                 </Box>
             </Container>

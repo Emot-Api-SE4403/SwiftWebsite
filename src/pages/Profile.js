@@ -2,10 +2,6 @@ import { Grid, Box, Container, CssBaseline, ThemeProvider, Typography, Link, Ico
 import * as React from 'react';
 import { ThemeRed } from '../components/Theme';
 import NavigationBar from '../components/NavigationBar';
-import logo from '../images/profile.png';
-import StarIcon from '@mui/icons-material/StarBorderOutlined';
-import CartIcon from '@mui/icons-material/ShoppingCartOutlined';
-import { useEffect, useState } from 'react';
 import BagIcon from '@mui/icons-material/ShoppingBagOutlined';
 import SettingIcon from '@mui/icons-material/SettingsOutlined';
 
@@ -14,11 +10,11 @@ export default function Profile() {
     const userData = JSON.parse(sessionStorage.getItem('user'));
 
     var name = userData.fullName
-    var jurusan = "SAINTEK"
-    var sekolah = "SMAN 1 Bekasi"
+    var jurusan = userData.jurusan
+    var sekolah = userData.sekolahAsal
     var email = userData.email
-    var phone = "081234567890" 
-    var profile = logo
+    var phone = userData.phoneNumber
+    var profile = userData.profilePicture
 
     return(
         <ThemeProvider theme={ThemeRed}>
@@ -29,10 +25,10 @@ export default function Profile() {
             <Container  component="main" maxWidth="md" sx={{padding:'0'}}>
                 <Box sx={{flexDirection:'column' , backgroundColor:'red', borderRadius: '10px'}}>
                     <Grid container sx={{padding:'25px 10px 10px 10px'}}>
-                        <Grid item xs={3}>
-                            <img src={profile} style={{maxWidth:"4vw", height:"auto"}}/>
+                        <Grid item xs={2}>
+                            <img src={profile} style={{width:"100%", height:"auto", padding: '10px'}}/>
                         </Grid>
-                        <Grid item xs={8}>
+                        <Grid item xs={9}>
                             <Typography variants='p' fontWeight='bold'>{name}</Typography>
                             <Typography variants='p'>{jurusan}</Typography>
                             <Typography variants='p'>{sekolah}</Typography>

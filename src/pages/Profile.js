@@ -69,6 +69,7 @@ export default function Profile() {
                                 }} id='/profil/edit'>Edit Profile</MenuItem>
                                 <MenuItem onClick={(e) => {
                                     setAnchorEl(null);
+                                    window.location.replace('/profil/picture')
                                 }}>Edit Foto Profile</MenuItem>
                                 <MenuItem onClick={(e) => {
                                     setAnchorEl(null);

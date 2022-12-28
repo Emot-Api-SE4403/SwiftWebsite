@@ -1,16 +1,10 @@
 import * as React from 'react';
-import MenuItem from '@mui/material/MenuItem';
-import Button from '@mui/material/Button';
-import TextField from '@mui/material/TextField';
-import Grid from '@mui/material/Grid';
-import Box from '@mui/material/Box';
-import Container from '@mui/material/Container';
 import { ThemeProvider } from "@mui/material/styles";
-import CssBaseline from '@mui/material/CssBaseline';
 import { ThemeRed } from '../components/Theme';
 import { useNavigate } from "react-router-dom";
 import NavigationBar from "../components/NavigationBar"
 import {Buffer} from 'buffer';
+import { MenuItem, Button, TextField, Grid, Box, Container, CssBaseline } from '@mui/material';
 
 export default function ProfileEdit() {
     const userData = JSON.parse(Buffer.from(sessionStorage.getItem('user'), 'base64').toString('utf8'));
@@ -19,6 +13,7 @@ export default function ProfileEdit() {
     const [phoneNumber, setPhoneNumber] = React.useState(userData.phoneNumber);
     const [sekolahAsal, setSekolahAsal] = React.useState(userData.sekolahAsal);
     const [jurusan, setJurusan] = React.useState(userData.jurusan);
+    const [pp, setPP] = React.useState(userData.profilePicture);
     const navigate = useNavigate();
  
 
@@ -37,7 +32,7 @@ export default function ProfileEdit() {
             },
             body: JSON.stringify(data)
         };
-        console.log(JSON.stringify(data))
+        //console.log(JSON.stringify(data))
         fetch(process.env.REACT_APP_BACKEND_URi+'/auth/updateregistration', options)
         .then(response => {
             if (response.ok) {
@@ -45,9 +40,11 @@ export default function ProfileEdit() {
             }
             throw new Error(response.message);
         })
-        .then(data => {
-            sessionStorage.setItem('user', JSON.stringify(data.user));
-            //navigate('/profil')
+        .then(json => {
+
+            // Save the encoded user data and the JWT token in session storage
+            sessionStorage.setItem('user', json.user);
+            navigate('/profil')
             
         })
         .catch(error => {
@@ -67,13 +64,12 @@ export default function ProfileEdit() {
                     flexDirection: 'column',
                     alignItems: 'center',
                     justifyContent: 'space-evenly',
-                    height: '90vh'
+                    minHeight: '90vh'
                 }}>
                     
                             
                     <Box component="form" noValidate onSubmit={handleSubmit} id="regform">
                         <Grid container spacing={2} justifyContent="center"> 
-                            
                             <Grid item xs={12}>
                                 <TextField
                                     autoComplete="given-name"

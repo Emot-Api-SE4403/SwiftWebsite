@@ -7,12 +7,14 @@ import Link from '@mui/material/Link';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { ThemeProvider } from "@mui/material/styles";
+import { useNavigate } from "react-router-dom";
 import logo from "../images/logo 512 256.svg";
 import CssBaseline from '@mui/material/CssBaseline';
 import { ThemeRed } from '../components/Theme';
-import {Buffer} from 'buffer';
+
 
 export default function Login() {
+    const navigate = useNavigate();
 
     const handleSubmit = (event) => {
         event.preventDefault();
@@ -32,14 +34,13 @@ export default function Login() {
             }
             throw new Error(response.statusText);
         }).then(json => {
-            // Encode the user data as a base64 string using the Buffer class
-            const userData = Buffer.from(JSON.stringify(json.user)).toString('base64');
+            console.log(json)
             // Save the encoded user data and the JWT token in session storage
-            sessionStorage.setItem('user', userData);
+            sessionStorage.setItem('user', json.user);
             sessionStorage.setItem('jwt', json.accessToken);
         
             // Redirect to the Profile page
-            window.location.replace('/profil');
+            navigate('/profil');
         }).catch(error => {
             alert(error.message);
             console.error(error)

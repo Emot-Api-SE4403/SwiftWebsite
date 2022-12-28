@@ -10,18 +10,16 @@ import { ThemeProvider } from "@mui/material/styles";
 import logo from "../images/logo 512 256.svg";
 import CssBaseline from '@mui/material/CssBaseline';
 import { ThemeRed } from '../components/Theme';
-
-
-
+import {Buffer} from 'buffer';
 
 export default function Login() {
 
     const handleSubmit = (event) => {
         event.preventDefault();
-    
+      
         const formData = new FormData(event.target);
         let data = Object.fromEntries(formData);
-        //console.log(data)
+      
         fetch(process.env.REACT_APP_BACKEND_URi+'/auth/login', {
             method: 'POST',
             body: JSON.stringify(data),
@@ -34,17 +32,21 @@ export default function Login() {
             }
             throw new Error(response.statusText);
         }).then(json => {
-            //console.log(json);
-            // Save the user data and JWT token in session storage
-            sessionStorage.setItem('user', JSON.stringify(json.user));
+            // Encode the user data as a base64 string using the Buffer class
+            const userData = Buffer.from(JSON.stringify(json.user)).toString('base64');
+            // Save the encoded user data and the JWT token in session storage
+            sessionStorage.setItem('user', userData);
             sessionStorage.setItem('jwt', json.accessToken);
         
-            // Redirect to the dashboard page
+            // Redirect to the Profile page
             window.location.replace('/profil');
         }).catch(error => {
             alert(error.message);
+            console.error(error)
         });
-    };
+      };
+      
+      
       
 
 

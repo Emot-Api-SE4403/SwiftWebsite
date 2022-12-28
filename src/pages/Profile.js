@@ -1,13 +1,13 @@
-import { Grid, Box, Container, CssBaseline, ThemeProvider, Typography, Link, IconButton} from '@mui/material';
+import { Grid, Menu, MenuItem, Fade, Box, Container, CssBaseline, ThemeProvider, Typography, Link, IconButton} from '@mui/material';
 import * as React from 'react';
 import { ThemeRed } from '../components/Theme';
 import NavigationBar from '../components/NavigationBar';
 import BagIcon from '@mui/icons-material/ShoppingBagOutlined';
 import SettingIcon from '@mui/icons-material/SettingsOutlined';
-
+import {Buffer} from 'buffer';
 
 export default function Profile() {
-    const userData = JSON.parse(sessionStorage.getItem('user'));
+    const userData = JSON.parse(Buffer.from(sessionStorage.getItem('user'), 'base64').toString('utf8'));
 
     var name = userData.fullName
     var jurusan = userData.jurusan
@@ -15,6 +15,14 @@ export default function Profile() {
     var email = userData.email
     var phone = userData.phoneNumber
     var profile = userData.profilePicture
+
+    const [anchorEl, setAnchorEl] = React.useState(null);
+    const open = Boolean(anchorEl);
+
+    const handleClick = (event) => {
+        setAnchorEl(event.currentTarget);
+    };
+    
 
     return(
         <ThemeProvider theme={ThemeRed}>
@@ -34,9 +42,40 @@ export default function Profile() {
                             <Typography variants='p'>{sekolah}</Typography>
                         </Grid>
                         <Grid item xs={1}>
-                            <IconButton  href="/profil/edit">
+                            <IconButton 
+                                id="fade-button"
+                                aria-controls={open ? 'fade-menu' : undefined}
+                                aria-haspopup="true"
+                                aria-expanded={open ? 'true' : undefined}
+                                onClick={handleClick}
+                            >
                                 <SettingIcon />
                             </IconButton>
+                            <Menu
+                                id="fade-menu"
+                                MenuListProps={{
+                                'aria-labelledby': 'fade-button',
+                                }}
+                                anchorEl={anchorEl}
+                                open={open}
+                                onClose={(e) => {
+                                    setAnchorEl(null);
+                                }}
+                                TransitionComponent={Fade}
+                            >
+                                <MenuItem onClick={(e) => {
+                                    setAnchorEl(null); 
+                                    window.location.replace('/profil/edit')
+                                }} id='/profil/edit'>Edit Profile</MenuItem>
+                                <MenuItem onClick={(e) => {
+                                    setAnchorEl(null);
+                                }}>Edit Foto Profile</MenuItem>
+                                <MenuItem onClick={(e) => {
+                                    setAnchorEl(null);
+                                    sessionStorage.clear();
+                                    window.location.replace('/')
+                                }}><b>Logout</b></MenuItem>
+                            </Menu>
                         </Grid>
                     </Grid>
                     <Grid container  sx={{textAlign:'center', borderTop: 1, padding:'5px'}} >

@@ -10,17 +10,17 @@ import CssBaseline from '@mui/material/CssBaseline';
 import { ThemeRed } from '../components/Theme';
 import { useNavigate } from "react-router-dom";
 import NavigationBar from "../components/NavigationBar"
-
+import {Buffer} from 'buffer';
 
 export default function ProfileEdit() {
-    const userData = JSON.parse(sessionStorage.getItem('user'));
+    const userData = JSON.parse(Buffer.from(sessionStorage.getItem('user'), 'base64').toString('utf8'));
     const [fullName, setFullName] = React.useState(userData.fullName);
     const [email, setEmail] = React.useState(userData.email);
     const [phoneNumber, setPhoneNumber] = React.useState(userData.phoneNumber);
     const [sekolahAsal, setSekolahAsal] = React.useState(userData.sekolahAsal);
     const [jurusan, setJurusan] = React.useState(userData.jurusan);
     const navigate = useNavigate();
-    
+ 
 
     const handleSubmit = (event) => {
         event.preventDefault();
@@ -62,7 +62,7 @@ export default function ProfileEdit() {
             <NavigationBar />
             <Container component="main" maxWidth="xs"> 
                 
-                <Box fullHeight sx={{
+                <Box sx={{
                     display: 'flex',
                     flexDirection: 'column',
                     alignItems: 'center',

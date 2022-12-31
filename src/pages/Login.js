@@ -34,7 +34,7 @@ export default function Login() {
             }
             throw new Error(response.statusText);
         }).then(json => {
-            console.log(json)
+            // console.log(json)
             // Save the encoded user data and the JWT token in session storage
             sessionStorage.setItem('user', json.user);
             sessionStorage.setItem('jwt', json.accessToken);

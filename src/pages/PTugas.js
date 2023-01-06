@@ -2,28 +2,19 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.min.js";
 //import { Link } from 'react-router-dom'
+import NavigationBar from "../components/NavigationBar";
+//import { useParams } from  "react-router-dom";
 
 function PTugas (){
-    return (
+  //let { id } =  useParams()
+      return (
         <div class="container-fluid" style={{ backgroundColor: "#fbeeeb" }}>
    <link
   rel="stylesheet"
   href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
 />
-  <nav className="navbar bg-danger rounded-bottom h5">
-    <div
-      className=" mx-auto text-center font-weight-bold"
-      style={{ width: 200 }}
-    >
-      <u>Tugas</u>
-      <div className="row">
-        <div className="col">
-        </div>
-        <div className="col">
-        </div>
-      </div>
-    </div>
-  </nav>
+<NavigationBar />
+  
   {/* body */}
   
   <a href="/tugasmtk"><button

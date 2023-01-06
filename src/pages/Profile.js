@@ -14,6 +14,7 @@ export default function Profile() {
     var sekolah = userData.sekolahAsal
     var email = userData.email
     var phone = userData.phoneNumber
+    var isAdmin = userData.role == "ROLE_ADMIN"
     var profile = userData.profilePicture
 
     const [anchorEl, setAnchorEl] = React.useState(null);
@@ -105,6 +106,16 @@ export default function Profile() {
                             <BagIcon />
                         </Grid>
                     </Grid>
+                    {isAdmin ? (
+                    <Grid container  sx={{backgroundColor:'lightgrey', borderRadius: 2, padding:'15px 5px', marginTop:'10px'}} >
+                        <Grid item xs={12}>
+                            <Link href="/admin">
+                                <Typography variants='p'>Halaman Admin</Typography>
+                            </Link>
+                        </Grid>
+                    </Grid>) : (<></>)
+                    }
+                    
                 </Box>
             </Container>
             

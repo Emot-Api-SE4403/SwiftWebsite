@@ -6,35 +6,12 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 //import { Link } from 'react-router-dom'
 //import React from 'react';
+import NavigationBar from "../components/NavigationBar";
 
 function TugasBio (){
     return (
       <div class="container">
-        <Navbar bg="danger" expand="lg">
-          <Container fluid>
-            <a href="/"><button type="button" class="btn-close" aria-label="Close">
-            </button></a>
-            <Navbar.Toggle aria-controls="navbarScroll" />
-            <Navbar.Collapse id="navbarScroll">
-              <Nav
-                className="me-auto my-2 my-lg-0"
-                style={{ maxHeight: '100px' }}
-                navbarScroll
-              >
-                <h2><i>Tugas Biologi</i></h2>
-              </Nav>
-              <Form className="d-flex">
-                <Form.Control
-                  type="search"
-                  placeholder="Search"
-                  className="me-2"
-                  aria-label="Search"
-                />
-                <Button variant="dark">Search</Button>
-              </Form>
-            </Navbar.Collapse>
-          </Container>
-        </Navbar>
+        <NavigationBar />
         <p></p>
         <p><u>Pilihan Ganda</u></p>
         <p>1. Perbedaan antara sel hewan dan tumbuhan yang paling utama adalah </p>

@@ -29,6 +29,8 @@ import TugasMTK from './pages/TugasMTK';
 import TugasBio from './pages/TugasBio';
 import ProfileEdit from './pages/CompleteRegistration';
 import ProfilePicture from './pages/ProfilePicture';
+import TugasTambah from './pages/TugasTambah';
+import LihatTugas from './pages/LihatTugas';
 
 // Menaruh daftar routing disini
 const router = createBrowserRouter([
@@ -116,6 +118,16 @@ const router = createBrowserRouter([
   path: "/Ptugas",
   element: <PTugas />,
   errorElement: <ErrorPage />
+  },
+  {
+    path: "/TugasTambah",
+    element: <PrivateRoute><TugasTambah /></PrivateRoute>,
+    errorElement: <ErrorPage />
+  },
+  {
+    path: "/LihatTugas/:tugas",
+    element: <PrivateRoute><LihatTugas /></PrivateRoute>,
+    errorElement: <ErrorPage />
   },
   {
     path: "/profil",

@@ -59,7 +59,12 @@ function PTugas (){
     </div>
   </button></a>
   <br />
-  <br />
+  <div className='mx-auto text-center'>
+  <a>Tombol Admin</a>
+        <div mx-auto text-center>
+          <a href="/TugasTambah" type="submit" class="btn btn-primary">Tambah Soal</a>
+        </div>
+  </div>
   <br />
   <br />
   <br />

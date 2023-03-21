@@ -15,42 +15,7 @@ import { ThemeRed } from '../components/Theme';
 
 export default function Login() {
     const navigate = useNavigate();
-
-    const handleSubmit = (event) => {
-        event.preventDefault();
       
-        const formData = new FormData(event.target);
-        let data = Object.fromEntries(formData);
-      
-        fetch(process.env.REACT_APP_BACKEND_URi+'/auth/login', {
-            method: 'POST',
-            body: JSON.stringify(data),
-            headers: {
-                'Content-Type': 'application/json'
-            }
-        }).then(response => {
-            if (response.ok) {
-                return response.json();
-            }
-            throw new Error(response.statusText);
-        }).then(json => {
-            // console.log(json)
-            // Save the encoded user data and the JWT token in session storage
-            sessionStorage.setItem('user', json.user);
-            sessionStorage.setItem('jwt', json.accessToken);
-        
-            // Redirect to the Profile page
-            navigate('/profil');
-        }).catch(error => {
-            alert(error.message);
-            console.error(error)
-        });
-      };
-      
-      
-      
-
-
     return (
         <ThemeProvider theme={ThemeRed}>
             <CssBaseline />
@@ -68,14 +33,14 @@ export default function Login() {
                         "maxWidth": "80%", 
                         "height": "auto", 
                     }}/>
-                    <Box component="form" noValidate onSubmit={handleSubmit} id="loginform">
+                    <Box component="form" noValidate id="loginform">
                         <Grid container spacing={2} justifyContent="center">
                         <Grid item xs={12}>
                                 <TextField
                                     required
                                     fullWidth
                                     id="email"
-                                    label="Email Address"
+                                    label="Id Karyawan"
                                     name="email"
                                     autoComplete="email"
                                 />

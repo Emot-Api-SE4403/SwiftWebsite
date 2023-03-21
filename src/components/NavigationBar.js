@@ -9,26 +9,20 @@ const NavigationBar = () => {
         <div className="icon">
         <IoMdPaperPlane/>
         </div>
-        <Navbar.Brand href="/">SWIFT E-LEARNING</Navbar.Brand>
+        <Navbar.Brand href="/">ADMIN SWIFT E-LEARNING</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
             <Nav.Link href="/">Home</Nav.Link>
             <Nav.Link href="/PTugas">Tugas</Nav.Link>
-            <NavDropdown title="Riwayat" id="basic-nav-dropdown">
-              <NavDropdown.Item href="/riwayat/materi">
-                Riwayat Materi
-              </NavDropdown.Item>
-              <NavDropdown.Item href="/riwayat/soal">
-                Riwayat Soal
-              </NavDropdown.Item>
-            </NavDropdown>
+            <Nav.Link href="/DataMember">Data Member</Nav.Link>
+            <Nav.Link href="/DataMentor">Data Mentor</Nav.Link>
             <NavDropdown title="Account" id="basic-nav-dropdown">
               <NavDropdown.Item href="/login">
                 Login
               </NavDropdown.Item>
               <NavDropdown.Item href="/register">
-                Register
+                Register Admin
               </NavDropdown.Item>
               <NavDropdown.Divider />
               <NavDropdown.Item href="/profil">

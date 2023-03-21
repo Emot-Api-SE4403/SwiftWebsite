@@ -29,6 +29,9 @@ function PTugas (){
         Matematika
       </p>
     </div>
+    <div mx-auto text-center className="left-btn">
+          <a type="submit" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Hapus Tugas</a>
+        </div>
   </button></a>
   <br />
   <a href="/tugasbio"><button
@@ -43,6 +46,9 @@ function PTugas (){
         Biologi
       </p>
     </div>
+    <div mx-auto text-center className="left-btn">
+          <a type="submit" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Hapus Tugas</a>
+        </div>
   </button></a>
   <br />
   <a href="/tugasbio"><button
@@ -57,13 +63,34 @@ function PTugas (){
         Biologi
       </p>
     </div>
+    <div mx-auto text-center className="left-btn">
+          <a type="submit" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Hapus Tugas</a>
+        </div>
   </button></a>
   <br />
+  <br/>
   <div className='mx-auto text-center'>
-  <a>Tombol Admin</a>
         <div mx-auto text-center>
-          <a href="/TugasTambah" type="submit" class="btn btn-primary">Tambah Soal</a>
+          <a href="/TugasTambah" type="submit" class="btn btn-primary">Tambah Tugas</a>
         </div>
+
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Hapus</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        Hapus Soal
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Delete</button>
+      </div>
+    </div>
+  </div>
+</div>
   </div>
   <br />
   <br />

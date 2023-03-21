@@ -31,12 +31,24 @@ import ProfileEdit from './pages/CompleteRegistration';
 import ProfilePicture from './pages/ProfilePicture';
 import TugasTambah from './pages/TugasTambah';
 import LihatTugas from './pages/LihatTugas';
+import DataMember from './pages/DataMember';
+import DataMentor from './pages/DataMentor';
 
 // Menaruh daftar routing disini
 const router = createBrowserRouter([
   {
     path: "/index",
     element: <App />,
+    errorElement: <ErrorPage />
+  },
+  {
+    path: "/DataMentor",
+    element: <DataMentor />,
+    errorElement: <ErrorPage />
+  },
+  {
+    path: "/DataMember",
+    element: <DataMember />,
     errorElement: <ErrorPage />
   },
   {

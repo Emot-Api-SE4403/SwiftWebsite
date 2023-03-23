@@ -3,7 +3,7 @@ import logo from '../images/image-1.png'
 
 const Intro = () => {
   var data = {
-    nama: "Admin",
+    nama: "Mentor dan Admin",
   }
 
   return (

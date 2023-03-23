@@ -93,6 +93,9 @@ const MatPel = () => {
                 </div>
               </Card>
             </Col>
+
+            <a href="#" type="submit" class="btn btn-primary">Tambah Materi</a>
+
             <h1 style={{color:'black', fontStyle:'oblique'}}>MATA PELAJARAN SOSHUM</h1>
             <Col md={4} className="MatPelWrapper" id="MatPel">
               <Card className="MatPelImage">
@@ -183,6 +186,7 @@ const MatPel = () => {
                       </div>
               </Card>
             </Col>
+            <a href="#" type="submit" class="btn btn-primary">Tambah Materi</a>
           </Row>
         </Container>
       </div>

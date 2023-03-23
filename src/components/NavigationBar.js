@@ -24,6 +24,9 @@ const NavigationBar = () => {
               <NavDropdown.Item href="/register">
                 Register Admin
               </NavDropdown.Item>
+              <NavDropdown.Item href="/register">
+                Register Mentor
+              </NavDropdown.Item>
               <NavDropdown.Divider />
               <NavDropdown.Item href="/profil">
                 Manage Profile

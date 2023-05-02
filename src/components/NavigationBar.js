@@ -18,19 +18,19 @@ const NavigationBar = () => {
             <Nav.Link href="/DataMember">Data Member</Nav.Link>
             <Nav.Link href="/DataMentor">Data Mentor</Nav.Link>
             <NavDropdown title="Account" id="basic-nav-dropdown">
-              <NavDropdown.Item href="/login">
-                Login
+              <NavDropdown.Item href="/loginadmin">
+                Login Admin
               </NavDropdown.Item>
               <NavDropdown.Item href="/register">
                 Register Admin
+              </NavDropdown.Item>
+              <NavDropdown.Item href="/loginmentor">
+                Login Mentor
               </NavDropdown.Item>
               <NavDropdown.Item href="/register">
                 Register Mentor
               </NavDropdown.Item>
               <NavDropdown.Divider />
-              <NavDropdown.Item href="/profil">
-                Manage Profile
-              </NavDropdown.Item>
             </NavDropdown>
           </Nav>
         </Navbar.Collapse>

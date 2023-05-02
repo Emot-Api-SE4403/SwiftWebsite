@@ -12,7 +12,7 @@ import { ThemeRed } from '../components/Theme';
 import { useNavigate } from "react-router-dom";
 
 
-export default function Register() {
+export default function registmentor() {
     // const navigate = useNavigate();
 
     // const registerapicall = (data) => {
@@ -96,9 +96,9 @@ export default function Register() {
                                 <TextField
                                     required
                                     fullWidth
-                                    label="iD Karyawan"
-                                    name="id"
-                                    autoComplete="id"
+                                    label="Email"
+                                    name="email"
+                                    autoComplete="email"
                                     variant="filled"
                                 />
                             </Grid>

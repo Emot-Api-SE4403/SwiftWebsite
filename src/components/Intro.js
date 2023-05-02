@@ -14,7 +14,7 @@ const Intro = () => {
             <div style={{color:'white'}} className="title">Selamat Datang,</div>
             <div style={{color:'white'}} className="title">{data.nama}</div>
             <div style={{color:'white'}} className="introButton ">
-            <a href="/login"><Button variant="dark" >Lets Go, Mate</Button></a>
+            
             </div>
           </Col>
           <Col md = {6} className="intromd" id="intro2">

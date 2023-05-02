@@ -13,7 +13,7 @@ import CssBaseline from '@mui/material/CssBaseline';
 import { ThemeRed } from '../components/Theme';
 
 
-export default function Login() {
+export default function loginmentor() {
     // const navigate = useNavigate();
       
     return (
@@ -39,10 +39,10 @@ export default function Login() {
                                 <TextField
                                     required
                                     fullWidth
-                                    id="id"
-                                    label="Id Karyawan"
-                                    name="id"
-                                    autoComplete="id"
+                                    id="email"
+                                    label="Email"
+                                    name="email"
+                                    autoComplete="email"
                                 />
                             </Grid>
                             <Grid item xs={12}>
@@ -80,7 +80,7 @@ export default function Login() {
                         >
                         Log In
                         </Button> 
-                        <Typography variant="body2">baru disini? <Link variant="body2" href="/register">Tambah Admin Sekarang!</Link></Typography>
+                        <Typography variant="body2">baru disini? <Link variant="body2" href="/registmentor">Buat Sekarang!</Link></Typography>
                     </Box>
                 </Box>
                 

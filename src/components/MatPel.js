@@ -15,7 +15,7 @@ const MatPel = () => {
       <div>
         <Container>
           <br />
-          <h1 style={{color:'black', fontStyle:'oblique'}}>MATA PELAJARAN SAINTEK</h1>
+          <h1 style={{color:'black', fontStyle:'oblique'}}></h1>
           <br />
           <Row>
             <Col md={4} className="matPelWrapper" id="MatPel">
@@ -23,7 +23,7 @@ const MatPel = () => {
                 <Image src={image10} alt="BIOLOGI" className="images" />
                 <div className="bg-dark">
                   <div className="p-2 m-1 text-white">
-                    <Card.Title className="text-center">BIOLOGI</Card.Title>
+                    <Card.Title className="text-center">KUANTITATIF</Card.Title>
                     <Card.Text className="text-left">
                       deskripsi mata pelajaran
                     </Card.Text>
@@ -42,7 +42,7 @@ const MatPel = () => {
                 <Image src={image12} alt="KIMIA" className="images" />
                 <div className="bg-dark">
                   <div className="p-2 m-1 text-white">
-                    <Card.Title className="text-center">KIMIA</Card.Title>
+                    <Card.Title className="text-center">LITERASI B. INGGRIS</Card.Title>
                     <Card.Text className="text-left">
                       deskripsi mata pelajaran
                     </Card.Text>
@@ -60,7 +60,7 @@ const MatPel = () => {
                 <Image src={image11} alt="FISIKA" className="images" />
                 <div className="bg-dark">
                   <div className="p-2 m-1 text-white">
-                    <Card.Title className="text-center">FISIKA</Card.Title>
+                    <Card.Title className="text-center">LITERASI B. INDONESIA</Card.Title>
                     <Card.Text className="text-left">
                       deskripsi mata pelajaran
                     </Card.Text>
@@ -80,7 +80,7 @@ const MatPel = () => {
                 <Image src={imagemtk} alt="MATEMATIKA" className="images" />
                 <div className="bg-dark">
                   <div className="p-2 m-1 text-white">
-                    <Card.Title className="text-center">MATEMATIKA</Card.Title>
+                    <Card.Title className="text-center">PENALARAN MATEMATIKA</Card.Title>
                     <Card.Text className="text-left">
                       deskripsi mata pelajaran
                     </Card.Text>
@@ -93,16 +93,12 @@ const MatPel = () => {
                 </div>
               </Card>
             </Col>
-
-            <a href="#" type="submit" class="btn btn-primary">Tambah Materi</a>
-
-            <h1 style={{color:'black', fontStyle:'oblique'}}>MATA PELAJARAN SOSHUM</h1>
             <Col md={4} className="MatPelWrapper" id="MatPel">
               <Card className="MatPelImage">
                 <Image src={image14} alt="SEJARAH" className="images" />
                 <div className="bg-dark">
                   <div className="p-2 m-1 text-white">
-                    <Card.Title className="text-center">SEJARAH</Card.Title>
+                    <Card.Title className="text-center">PENALARAN UMUM</Card.Title>
                     <Card.Text className="text-left">
                       deskripsi mata pelajaran
                     </Card.Text>
@@ -117,46 +113,10 @@ const MatPel = () => {
             </Col>
             <Col md={4} className="MatPelWrapper" id="MatPel">
               <Card className="MatPelImage">
-                <Image src={image15} alt="GEOGRAFI" className="images" />
-                <div className="bg-dark">
-                  <div className="p-2 m-1 text-white">
-                    <Card.Title className="text-center">GEOGRAFI</Card.Title>
-                    <Card.Text className="text-left">
-                      deskripsi mata pelajaran
-                    </Card.Text>
-                    <div class="btn-group">
-                      <a href="/explore/geografi" class="btn btn-primary active" aria-current="page">Mulai</a>
-                      <a href="#" class="btn btn-primary active" data-bs-toggle="modal" data-bs-target="#exampleModal">Hapus</a>
-                      <a href="#" class="btn btn-primary active">Edit</a>
-                    </div>          
-                  </div>
-                </div>
-              </Card>
-            </Col>
-            <Col md={4} className="MatPelWrapper" id="MatPel">
-              <Card className="MatPelImage">
-                <Image src={image16} alt="EKONOMI" className="images" />
-                <div className="bg-dark">
-                  <div className="p-2 m-1 text-white">
-                    <Card.Title className="text-center">EKONOMI</Card.Title>
-                    <Card.Text className="text-left">
-                      deskripsi mata pelajaran
-                    </Card.Text>
-                    <div class="btn-group">
-                      <a href="/explore/kimia" class="btn btn-primary active" aria-current="page">Mulai</a>
-                      <a href="#" class="btn btn-primary active" data-bs-toggle="modal" data-bs-target="#exampleModal">Hapus</a>
-                      <a href="#" class="btn btn-primary active">Edit</a>
-                    </div>
-                  </div>
-                </div>
-              </Card>
-            </Col>
-            <Col md={4} className="MatPelWrapper" id="MatPel">
-              <Card className="MatPelImage">
                 <Image src={image13} alt="SOSIOLOGI" className="images" />
                 <div className="bg-dark">
                   <div className="p-2 m-1 text-white">
-                    <Card.Title className="text-center">SOSIOLOGI</Card.Title>
+                    <Card.Title className="text-center">KEMAMPUAN MEMAHAMI BACAAN DAN MENULIS</Card.Title>
                     <Card.Text className="text-left">
                       deskripsi mata pelajaran
                     </Card.Text>
@@ -186,7 +146,10 @@ const MatPel = () => {
                       </div>
               </Card>
             </Col>
+
             <a href="#" type="submit" class="btn btn-primary">Tambah Materi</a>
+
+            
           </Row>
         </Container>
       </div>

@@ -1,18 +1,18 @@
 import React, { useState, useEffect } from 'react';
 
 function Clock() {
-  const [dateTime, setDateTime] = useState(new Date());
+  const [time, setTime] = useState(new Date());
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      setDateTime(new Date());
+    const intervalId = setInterval(() => {
+      setTime(new Date());
     }, 1000);
-
-    return () => clearInterval(interval);
+    return () => clearInterval(intervalId);
   }, []);
 
-  const formattedTime = dateTime.toLocaleTimeString();
-  const formattedDate = dateTime.toLocaleDateString();
+
+  const formattedDate = time.toLocaleDateString('en-GB', { day: 'numeric', month: 'numeric', year: 'numeric' });
+  const formattedTime = time.toLocaleTimeString('en-US', { hour: 'numeric', minute: 'numeric', second: 'numeric' });
 
   return (
     <div>

@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import NavigationBar from '../components/NavigationBar';
 import SideBar from '../components/DashboardItem/SideBar';
 import { Container } from 'react-bootstrap';
+import MainContent from '../components/DashboardItem/MainContent';
 
 export default function Dashboard () {
     const navigator = useNavigate()
@@ -20,11 +21,9 @@ export default function Dashboard () {
     return(
         <>
         <NavigationBar />
-        <div className='d-flex flex-direction-row'>
+        <div className='d-flex flex-direction-row' style={{height: '90vh'}}>
             <SideBar onTabChange={handleTabChange}/>    
-            <Container>
-                <h1>And the number is {activeTab}</h1>
-            </Container>
+            <MainContent activeTab={activeTab} />
         </div>
         </>
     )

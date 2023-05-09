@@ -1,6 +1,7 @@
 import { Navbar, Container, Nav, NavDropdown  } from "react-bootstrap"
 import { icons } from "react-icons"
 import {IoMdPaperPlane} from "react-icons/io"
+
 const NavigationBar = () => {
   return (
     <div>
@@ -31,6 +32,7 @@ const NavigationBar = () => {
                 Register Mentor
               </NavDropdown.Item>
               <NavDropdown.Divider />
+              <DashboardButton/>
             </NavDropdown>
           </Nav>
         </Navbar.Collapse>
@@ -38,6 +40,30 @@ const NavigationBar = () => {
     </Navbar>
     </div>
   )
+}
+
+const DashboardButton = () => {
+  var jwt = sessionStorage.getItem('session_token')
+
+  if (jwt !== null) {
+    return (
+      <>
+        <NavDropdown.Item href="/dashboard">
+            Dashboard
+        </NavDropdown.Item>
+        <NavDropdown.Item onClick={useLogOut}>
+            Log Out
+        </NavDropdown.Item>
+      </> 
+    )
+  }
+
+  return (<></>)
+}
+
+const useLogOut = () => {
+  sessionStorage.removeItem('session_token')
+  window.location.href = '/'
 }
 
 export default NavigationBar

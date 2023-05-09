@@ -13,8 +13,16 @@ import CssBaseline from '@mui/material/CssBaseline';
 import { ThemeRed } from '../components/Theme';
 
 
-export default function loginmentor() {
-    // const navigate = useNavigate();
+export default function LoginMentor() {
+    const navigate = useNavigate();
+
+    const useHandleSubmit = (event) => {
+        event.preventDefault();
+
+        sessionStorage.setItem('session_token', 'MOCK_DATA')
+        sessionStorage.setItem('user_type', 'mentor')
+        navigate('/')
+    }
       
     return (
         <ThemeProvider theme={ThemeRed}>
@@ -33,7 +41,7 @@ export default function loginmentor() {
                         "maxWidth": "80%", 
                         "height": "auto", 
                     }}/>
-                    <Box component="form" noValidate id="loginform">
+                    <Box component="form" noValidate id="loginform" onSubmit={useHandleSubmit}>
                         <Grid container spacing={2} justifyContent="center">
                         <Grid item xs={12}>
                                 <TextField
@@ -76,7 +84,7 @@ export default function loginmentor() {
                                 backgroundColor: 'primary.light'
                             }}
                             form="loginform"
-                            href="/"
+                           
                         >
                         Log In
                         </Button> 

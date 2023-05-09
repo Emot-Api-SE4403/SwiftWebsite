@@ -7,14 +7,24 @@ import Link from '@mui/material/Link';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { ThemeProvider } from "@mui/material/styles";
-import { useNavigate } from "react-router-dom";
+import { redirect, useNavigate } from "react-router-dom";
 import logo from "../images/logo 512 256.svg";
 import CssBaseline from '@mui/material/CssBaseline';
 import { ThemeRed } from '../components/Theme';
 
 
+
+
 export default function Login() {
-    // const navigate = useNavigate();
+    const navigate = useNavigate();
+
+    const useHandleSubmit = (event) => {
+        event.preventDefault();
+
+        sessionStorage.setItem('session_token', 'MOCK_DATA')
+        sessionStorage.setItem('user_type', 'admin')
+        navigate('/')
+    }
       
     return (
         <ThemeProvider theme={ThemeRed}>
@@ -33,7 +43,7 @@ export default function Login() {
                         "maxWidth": "80%", 
                         "height": "auto", 
                     }}/>
-                    <Box component="form" noValidate id="loginform">
+                    <Box component="form" noValidate id="loginform" onSubmit={useHandleSubmit}>
                         <Grid container spacing={2} justifyContent="center">
                         <Grid item xs={12}>
                                 <TextField
@@ -76,7 +86,6 @@ export default function Login() {
                                 backgroundColor: 'primary.light'
                             }}
                             form="loginform"
-                            href="/"
                         >
                         Log In
                         </Button> 

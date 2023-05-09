@@ -33,8 +33,9 @@ import TugasTambah from './pages/TugasTambah';
 import LihatTugas from './pages/LihatTugas';
 import DataMember from './pages/DataMember';
 import DataMentor from './pages/DataMentor';
-import Loginmentor from './pages/loginmentor';
+import LoginMentor from './pages/loginmentor';
 import Registmentor from './pages/registmentor';
+import Dashboard from './pages/Dashboard';
 
 // Menaruh daftar routing disini
 const router = createBrowserRouter([
@@ -50,7 +51,7 @@ const router = createBrowserRouter([
   },
   {
     path: "/loginmentor",
-    element: <Loginmentor/>,
+    element: <LoginMentor/>,
     errorElement: <ErrorPage />
   },
   {
@@ -172,6 +173,11 @@ const router = createBrowserRouter([
     path: '/testredirect',
     element: <PrivateRoute><h1>Hello</h1></PrivateRoute>,
     errorElement: <ErrorPage />
+  },
+  {
+    path: '/dashboard',
+    element: <Dashboard></Dashboard>,
+    errorElement: <ErrorPage/>
   }
 ]);
 

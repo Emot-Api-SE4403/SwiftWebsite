@@ -18,14 +18,19 @@ function AdminSideBar({ onTabChange }) {
         setActiveTab(tabIndex);
         onTabChange(tabIndex);
     };
+    var tabNames = [
+        'Profile',
+        'Analytics',
+        'Database',
+    ]
 
     return (
         <>
         <div className="d-flex flex-column flex-shrink-0 p-3 bg-light" style={{width: '180px', minHeight: '90vh'}}>
             <ul className="nav nav-pills flex-column mb-auto">
-                <li className={"nav-link link-dark " + (activeTab==0? 'active':'')} onClick={() => handleTabClick(0)}>Tab 1</li>
-                <li className={"nav-link link-dark " + (activeTab==1? 'active':'')} onClick={() => handleTabClick(1)}>Tab 2</li>
-                <li className={"nav-link link-dark " + (activeTab==2? 'active':'')} onClick={() => handleTabClick(2)}>Tab 3</li>
+                <li className={"nav-link link-dark " + (activeTab===0? 'active':'')} onClick={() => handleTabClick(0)}>{tabNames[0]}</li>
+                <li className={"nav-link link-dark " + (activeTab===1? 'active':'')} onClick={() => handleTabClick(1)}>{tabNames[1]}</li>
+                <li className={"nav-link link-dark " + (activeTab===2? 'active':'')} onClick={() => handleTabClick(2)}>{tabNames[2]}</li>
             </ul>
             <hr />
             <Clock/>
@@ -44,9 +49,9 @@ function MentorSideBar({ onTabChange }) {
     return <>
     <div className="d-flex flex-column flex-shrink-0 p-3 bg-light" style={{width: '180px', minHeight: '90vh'}}>
             <ul className="nav nav-pills flex-column mb-auto">
-                <li className={"nav-link link-dark " + (activeTab==0? 'active':'')} onClick={() => handleTabClick(0)}>Tab 1</li>
-                <li className={"nav-link link-dark " + (activeTab==1? 'active':'')} onClick={() => handleTabClick(1)}>Tab 2</li>
-                <li className={"nav-link link-dark " + (activeTab==2? 'active':'')} onClick={() => handleTabClick(2)}>Tab 3</li>
+                <li className={"nav-link link-dark " + (activeTab===0? 'active':'')} onClick={() => handleTabClick(0)}>Tab 1</li>
+                <li className={"nav-link link-dark " + (activeTab===1? 'active':'')} onClick={() => handleTabClick(1)}>Tab 2</li>
+                <li className={"nav-link link-dark " + (activeTab===2? 'active':'')} onClick={() => handleTabClick(2)}>Tab 3</li>
             </ul>
             <hr />
             <Clock/>

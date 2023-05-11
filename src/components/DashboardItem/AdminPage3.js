@@ -5,7 +5,7 @@ import { Col, Row } from "react-bootstrap";
 
 export default function AdminPage3 () {
     return (
-        <div className="overflow-auto">
+        <div className="overflow-auto" style={{width:'100%'}}>
             <div className="container flex-grow">
                 <Row>
                     <Col>

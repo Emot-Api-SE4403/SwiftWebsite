@@ -12,55 +12,72 @@ import { ThemeRed } from '../components/Theme';
 import { useNavigate } from "react-router-dom";
 
 
-export default function registmentor() {
-    // const navigate = useNavigate();
+export default function Registmentor() {
+    const navigate = useNavigate();
 
-    // const registerapicall = (data) => {
-    //   fetch(process.env.REACT_APP_BACKEND_URi+'/auth/register', {
-    //     method: 'POST',
-    //     body: JSON.stringify(data),
-    //     headers: {
-    //       'Content-Type': 'application/json'
-    //     }
-    //   }).then(response => {
-    //     if (response.ok) {
-    //       return response.json();
-    //     }
-    //     throw new Error(response.statusText);
-    //   }).then(json => {
-    //     alert('Registration successful! Please login to continue.');
-    //     navigate('/login');
-    //   }).catch(error => {
-    //     alert(error.message);
-    //   });
-    // };
-    
-  
+    function checkPassword(pw, cpw) {
+        if (pw.length < 8) {
+            alert("Panjang password minimal 8 karakter")
+            return false
+        }
+        if (pw !== cpw) {
+            alert("Konfirmasi password tidak sesuai dengan password")
+            return false
+        }
+        return true
+    }
 
-    // const handleSubmit = (event) => {
-    //     event.preventDefault();
-    //     const formData = new FormData(event.target);
-    //     let data = Object.fromEntries(formData);
+    const handleSubmit = (event) => {
+        event.preventDefault();
+
         
-    //     if (data.password.length < 8) {
-    //       alert('Panjang pasword harus lebih dari 8!');
-    //     } else if (data.password === data.confirmpassword) {
-    //       registerapicall({
-    //         fullName: data.nama,
-    //         email: data.email,
-    //         password: data.password,
-    //       });
-    //     } else {
-    //       alert('Confirmasi password tidak sesuai');
-    //     }
-    //   };
+        const formData = new FormData(event.target);
+        let data = Object.fromEntries(formData);
+        if (!checkPassword(data.password, data.confirmpassword)) {
+            return;
+        }
+
+        var settings = {
+            method: 'POST',
+            body: JSON.stringify({
+                'email':data.email,
+                'raw_password':data.password,
+                'nama_lengkap':data.nama,
+                'keahlian':data.keahlian,
+                'asal':data.asal
+            }),
+            headers: {
+                'Content-Type':'application/json'
+            }
+        }
+        fetch(process.env.REACT_APP_BACKEND_API_URL+'/mentor/register', settings)
+        .then(response => {
+            if (response.ok) {
+            return response.json();
+            }
+            throw response;
+        })
+        .then(json => {
+            alert('berhasil!')
+            navigate('/loginmentor')
+        })
+        .catch(error => {
+            error.json().then(data => {
+            alert(data.detail);
+            }).catch(() => {
+            alert(error.message);
+            });
+        });
+
+
+    }
 
     return (
         <ThemeProvider theme={ThemeRed}>
             <CssBaseline />
             <Container component="main" maxWidth="xs"> 
                 <Box sx={{
-                    height: '100vh',
+                    minHeight: '100vh',
                     display: 'flex',
                     flexDirection: 'column',
                     alignItems: 'center',
@@ -77,7 +94,7 @@ export default function registmentor() {
                         Register Account
                     </Typography>
                             
-                    <Box component="form" noValidate id="regform">
+                    <Box component="form" noValidate id="regform" onSubmit={handleSubmit}>
                         <Grid container spacing={2} justifyContent="center"> 
                             
                             <Grid item xs={12}>
@@ -112,6 +129,7 @@ export default function registmentor() {
                                     id="password"
                                     autoComplete="new-password"
                                     variant="filled"
+                                    helperText="Panjang password minimal 8 karakter"
                                 />
                             </Grid>
                             <Grid item xs={12}>
@@ -124,9 +142,36 @@ export default function registmentor() {
                                     id="confirmpassword"
                                     autoComplete="new-password"
                                     variant="filled"
+                                    helperText='Isi harus sama dengan password'
                                 />
                                 
-                            </Grid>                    
+                            </Grid> 
+                            <Grid item xs={12}>
+                                <TextField
+                                    required
+                                    fullWidth
+                                    name="keahlian"
+                                    label="Masukan keahlian anda"
+                                    type="text"
+                                    id="keahlian"
+                                    variant="filled"
+                                    helperText='Contoh: Literasi Bahasa Indonesia, Literasi Bahasa Inggris'
+                                />
+                                
+                            </Grid>   
+                            <Grid item xs={12}>
+                                <TextField
+                                    required
+                                    fullWidth
+                                    name="asal"
+                                    label="Masukan asal anda"
+                                    type="text"
+                                    id="asal"
+                                    variant="filled"
+                                    helperText='Contoh: Universitas Telkom, Prosus Inten, SMK Telkom Bandung, Umum'
+                                />
+                                
+                            </Grid>                   
                         </Grid>
                     </Box>
                     <Button
@@ -136,7 +181,7 @@ export default function registmentor() {
                         fullWidth
                         sx={{mb: 3, mt:2, borderRadius: 5}}
                         form="regform"
-                        href="/loginadmin"
+                        
                     >
                     Daftar  
                     </Button> 

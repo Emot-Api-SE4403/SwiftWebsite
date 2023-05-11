@@ -19,9 +19,41 @@ export default function LoginMentor() {
     const useHandleSubmit = (event) => {
         event.preventDefault();
 
-        sessionStorage.setItem('session_token', 'MOCK_DATA')
-        sessionStorage.setItem('user_type', 'mentor')
-        navigate('/')
+        
+        const formData = new FormData(event.target);
+        let data = Object.fromEntries(formData);
+
+
+        var settings = {
+            method: 'POST',
+            body: JSON.stringify({
+                'email':data.email,
+                'password':data.password
+            }),
+            headers: {
+                'Content-Type':'application/json'
+            }
+        }
+        fetch(process.env.REACT_APP_BACKEND_API_URL+'/mentor/login', settings)
+        .then(response => {
+            if (response.ok) {
+                return response.json()
+            }
+            throw response
+        }).then(json => {
+
+            sessionStorage.setItem('session_token', json.access_token)
+            sessionStorage.setItem('user_type', 'mentor')
+
+            navigate('/')
+        })
+        .catch(error => {
+            error.json().then(data => {
+            alert(data.detail);
+            }).catch(() => {
+            alert(error.message);
+            });
+        });
     }
       
     return (

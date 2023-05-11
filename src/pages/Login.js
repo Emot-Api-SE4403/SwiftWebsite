@@ -18,12 +18,40 @@ import { ThemeRed } from '../components/Theme';
 export default function Login() {
     const navigate = useNavigate();
 
+
     const useHandleSubmit = (event) => {
         event.preventDefault();
 
-        sessionStorage.setItem('session_token', 'MOCK_DATA')
-        sessionStorage.setItem('user_type', 'admin')
-        navigate('/')
+        
+        const formData = new FormData(event.target);
+        let data = Object.fromEntries(formData);
+
+
+        var settings = {
+            method: 'POST',
+            body: JSON.stringify({
+                'id':data.id,
+                'password':data.password
+            }),
+            headers: {
+                'Content-Type':'application/json'
+            }
+        }
+        fetch(process.env.REACT_APP_BACKEND_API_URL+'/admin/login', settings)
+        .then(response => {
+            if (response.ok) {
+                return response.json()
+            }
+            throw new Error(response.statusText)
+        }).then(json => {
+
+            sessionStorage.setItem('session_token', json.access_token)
+            sessionStorage.setItem('user_type', 'admin')
+
+            navigate('/')
+        }).catch(error => {
+            alert(error.message)
+        })
     }
       
     return (

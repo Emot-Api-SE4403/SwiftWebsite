@@ -7,14 +7,52 @@ import Link from '@mui/material/Link';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { ThemeProvider } from "@mui/material/styles";
-import { useNavigate } from "react-router-dom";
+import { redirect, useNavigate } from "react-router-dom";
 import logo from "../images/logo 512 256.svg";
 import CssBaseline from '@mui/material/CssBaseline';
 import { ThemeRed } from '../components/Theme';
 
 
+
+
 export default function Login() {
-    // const navigate = useNavigate();
+    const navigate = useNavigate();
+
+
+    const useHandleSubmit = (event) => {
+        event.preventDefault();
+
+        
+        const formData = new FormData(event.target);
+        let data = Object.fromEntries(formData);
+
+
+        var settings = {
+            method: 'POST',
+            body: JSON.stringify({
+                'id':data.id,
+                'password':data.password
+            }),
+            headers: {
+                'Content-Type':'application/json'
+            }
+        }
+        fetch(process.env.REACT_APP_BACKEND_API_URL+'/admin/login', settings)
+        .then(response => {
+            if (response.ok) {
+                return response.json()
+            }
+            throw new Error(response.statusText)
+        }).then(json => {
+
+            sessionStorage.setItem('session_token', json.access_token)
+            sessionStorage.setItem('user_type', 'admin')
+
+            navigate('/')
+        }).catch(error => {
+            alert(error.message)
+        })
+    }
       
     return (
         <ThemeProvider theme={ThemeRed}>
@@ -33,7 +71,7 @@ export default function Login() {
                         "maxWidth": "80%", 
                         "height": "auto", 
                     }}/>
-                    <Box component="form" noValidate id="loginform">
+                    <Box component="form" noValidate id="loginform" onSubmit={useHandleSubmit}>
                         <Grid container spacing={2} justifyContent="center">
                         <Grid item xs={12}>
                                 <TextField
@@ -76,7 +114,6 @@ export default function Login() {
                                 backgroundColor: 'primary.light'
                             }}
                             form="loginform"
-                            href="/"
                         >
                         Log In
                         </Button> 

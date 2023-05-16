@@ -13,8 +13,48 @@ import CssBaseline from '@mui/material/CssBaseline';
 import { ThemeRed } from '../components/Theme';
 
 
-export default function loginmentor() {
-    // const navigate = useNavigate();
+export default function LoginMentor() {
+    const navigate = useNavigate();
+
+    const useHandleSubmit = (event) => {
+        event.preventDefault();
+
+        
+        const formData = new FormData(event.target);
+        let data = Object.fromEntries(formData);
+
+
+        var settings = {
+            method: 'POST',
+            body: JSON.stringify({
+                'email':data.email,
+                'password':data.password
+            }),
+            headers: {
+                'Content-Type':'application/json'
+            }
+        }
+        fetch(process.env.REACT_APP_BACKEND_API_URL+'/mentor/login', settings)
+        .then(response => {
+            if (response.ok) {
+                return response.json()
+            }
+            throw response
+        }).then(json => {
+
+            sessionStorage.setItem('session_token', json.access_token)
+            sessionStorage.setItem('user_type', 'mentor')
+
+            navigate('/')
+        })
+        .catch(error => {
+            error.json().then(data => {
+            alert(data.detail);
+            }).catch(() => {
+            alert(error.message);
+            });
+        });
+    }
       
     return (
         <ThemeProvider theme={ThemeRed}>
@@ -33,7 +73,7 @@ export default function loginmentor() {
                         "maxWidth": "80%", 
                         "height": "auto", 
                     }}/>
-                    <Box component="form" noValidate id="loginform">
+                    <Box component="form" noValidate id="loginform" onSubmit={useHandleSubmit}>
                         <Grid container spacing={2} justifyContent="center">
                         <Grid item xs={12}>
                                 <TextField
@@ -76,7 +116,7 @@ export default function loginmentor() {
                                 backgroundColor: 'primary.light'
                             }}
                             form="loginform"
-                            href="/"
+                           
                         >
                         Log In
                         </Button> 
